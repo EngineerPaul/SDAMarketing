@@ -1,0 +1,137 @@
+.header {
+    background: #f3f3f3;
+    border-bottom: 0px none;
+    padding-top: 10px;
+    position: fixed;
+    width: 100%;
+    height: 97.5px;
+    z-index: 1;
+    box-shadow: 0px 0px 13px -5px gray
+}
+
+.header .col1 {
+    width: 210px;
+    text-align: center;
+}
+
+.header a {
+    text-decoration: none;
+}
+
+.header p.title {
+    font-size: 14px;
+    line-height: 14px;
+    margin-bottom: 0;
+    position: relative;
+    color: #000000;
+    font-style: italic;
+}
+
+.header p.sda-logo {
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 49px;
+    text-transform: uppercase;
+    color: #dc5130;
+    display: initial;
+    vertical-align: middle;
+    font-weight: bold;
+    letter-spacing: 16px;
+    font-style: italic;
+    letter-spacing: 16px;
+    text-indent: 35px;
+    text-decoration: none;
+}
+
+.header .col2 {
+    
+    width: 180px;
+    vertical-align: middle;
+    /* line-height: 31px; */
+    
+}
+
+.header .phone-numbers {
+    display: block;
+    height: 100%;
+}
+
+.header .col2 a {
+    color: #dc5130;
+    text-decoration: none;
+    outline: none;
+    line-height: calc(87.5px / 3);
+}
+
+.header .col2 a:hover {
+    text-decoration: underline;
+    color: gray;
+}
+
+ul.horizontal-menu {
+    padding: 0;
+    margin-bottom: 0;
+    height: 100%;
+    line-height: 75px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+ul.horizontal-menu li {
+    display: inline;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+ul.horizontal-menu li > a {
+    color: #333333;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+ul.horizontal-menu li > a:hover {
+    text-decoration: underline;
+    color: #dc5130;
+}
+
+.header .col-md-1.ms-auto {
+    min-width: 150px;
+    text-align: right;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.header .menu-button .bar1,
+.header .menu-button .bar2,
+.header .menu-button .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #dc5130;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.header .menu-button.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.header .menu-button.change .bar2 {opacity: 0;}
+
+.header .menu-button.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.header .nav-menu [type="checkbox"] {
+    display: none;
+}
+
+.header .nav-menu .toggleMenu {
+    display: none;
+}

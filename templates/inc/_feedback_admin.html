@@ -1,0 +1,16 @@
+{% load static %}
+
+{% if request.path != '/feedback' %}
+<div class="feedback-container">
+
+    <div class="feedback-switch" id="feedback-switch">
+        <input type="checkbox" id="feedback-input" class="feedback-input" onclick="switch_feedback()">
+        <label for="feedback-input">
+            <a href="{% url 'feedback_url' %}">
+                <img src="{% static 'img/feedback.png' %}" alt="feedback.png" height="80px">
+            </a>
+        </label>
+    </div>
+
+</div>
+{% endif %}

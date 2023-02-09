@@ -1,0 +1,52 @@
+{% load static %}
+
+<div class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col1">
+                <a href="{% url 'homepage_url' %}">
+                    <div>
+                        <p class="title">Маркетинговое агентство</p>
+                        <p class="sda-logo">SDA</p>
+                    </div>  
+                </a>
+            </div>
+            <div class="col2 d-none d-sm-block">
+                <div class="phone-numbers">
+                    <a href="tel:+78122094537">+7 (812) 209-45-37</a> <br>
+                    <a href="tel:+79119254537"> +7 (911) 925-45-37</a><br>
+                    <a href="mailto:sda@sdamarketing.ru">sda@sdamarketing.ru</a>	
+                </div>
+            </div>
+
+            <div class="col ms-auto">
+                <nav class="nav-menu">
+                    <input type="checkbox" name="toggle" id="menu" class="toggleMenu">
+                    <label for="menu" class="toggleMenu">
+                        <div class="menu-button" onclick="transform_menu(this)">
+                            <div class="bar1"></div>
+                            <div class="bar2"></div>
+                            <div class="bar3"></div>
+                        </div>
+                    </label>
+                    <ul class="horizontal-menu">
+                        <li><a href="{% url 'about_us_url' %}">О нас</a></li><hr>
+                        <li><a href="{% url 'services_url' %}">Услуги</a></li><hr>
+                        <li><a href="{% url 'prices_url' %}">Цены</a></li><hr>
+                        <li><a href="{% url 'articles_url' %}">Статьи</a></li><hr>
+                        <li><a href="{% url 'vacancies_url' %}">Вакансии</a></li><hr>
+                        <li><a href="{% url 'contacts_url' %}">Контакты</a></li><hr>
+                        <li><a href="{% url 'dictionary_url' %}">Словарь</a></li><hr>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- change bars button to cross button -->
+<script>
+    function transform_menu(x) {
+        x.classList.toggle("change");
+    }
+</script>

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="guide">
+    <div class="container">
+        <p>
+            <a href="{% url 'homepage_url' %}">Главная</a>
+             >> 
+            Вакансии
+        </p>
+    </div>
+    <hr>
+</div>
+<div class="container">
+    <h2>
+        Вакансии
+    </h2>
+    
+    <div class="vacancies">
+
+        {% for vacancy in vacancies %}
+        {% if vacancy.active %}
+        <div class="vacancy">
+            <p class="title">
+                <strong>{{ vacancy.title|upper }}</strong>
+            </p>
+            <div class="vacancy-description">
+                {{ vacancy.description|safe }}
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+
+        <p class="vacancies-summary">
+            <strong>
+                Резюме присылайте на u.ivanova@sdamarketing.ru
+            </strong>
+        </p>
+    </div>
+
+</div>
+{% endblock content %}

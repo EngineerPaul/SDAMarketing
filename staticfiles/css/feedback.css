@@ -1,0 +1,81 @@
+/* Common */
+
+.feedback-container {
+    position: fixed;
+    right: 80px;
+    top: 120px;
+}
+
+.feedback-container [type="checkbox"] {
+    display: none;
+}
+
+
+/* Switch button */
+
+.feedback-container .feedback-switch {
+    position: fixed;
+    right: 50px;
+    top: 140px;
+    opacity: 100%;
+    transition: right .2s, opacity .2s;
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+}
+
+.feedback-container .feedback-switch:hover {
+    transform: scale(1.05);
+}
+
+.feedback-container .feedback-switch.change{
+    opacity: 0%;
+    right: -80px;
+}
+
+
+/* Form */
+
+.feedback-container .feedback-form {
+    position: fixed;
+    padding: 10px;
+    background-color: antiquewhite;
+    right: -200px;
+    /* right: 80px; */
+    top: 220px;
+    display: block;
+    width: 200px;
+    height: 325px;
+    border: .5px rgb(187, 185, 185) solid;
+    border-radius: 5px;
+
+    transition: right .2s;
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+}
+
+.feedback-container .feedback-form.change {
+    right: 80px;
+}
+
+
+/* Close button */
+
+.feedback-container .feedback-close {
+    position: fixed;
+    top: 220px;
+    /* right: 50px; */
+    right: -230px;
+
+    transition: right .2s;
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+}
+
+.feedback-container .feedback-close:hover {
+    transform: scale(1.15);
+}
+
+.feedback-container .feedback-close.change {
+    right: 50px;
+}
+

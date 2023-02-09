@@ -1,0 +1,210 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="guide">
+    <div class="container">
+        <p>
+            <a href="{% url 'homepage_url' %}">Главная</a>
+             >> 
+            Услуги
+        </p>
+    </div>
+    <hr>
+</div>
+<div class="container">
+    <div class="services">
+        <h2>
+            Услуги
+        </h2>
+        <p>
+            В своей работе мы используем весь спектр маркетинговых методов. 
+            Специалисты маркетигового агенства SDA обладают большим опытом в 
+            организации и проведении количественных, качественных и кабинетных 
+            исследований. Мы всегда знаем, какой комплекс маркетинговых методов 
+            наилучшим образом подходит для  заказчика. Каждый наш проект индивидуален 
+            и уникален. 
+        </p>
+        <p>
+            Помимо маркетинговых исследований, у нас можно заказать услуги 
+            копирайтинга, обучающие семинары по внутреннему и внешнему маркетингу. 
+        </p>
+    
+        <div class="details">
+            <div class="row">
+                <div class="col">
+                    <div class="card mb-3">
+                        <div class="row">
+                            <div class="col-5">
+                                <img src="{% static 'img/services/score.jpg' %}" class="img-fluid rounded-start" alt="homepage-score.jpg">
+                            </div>
+                            <div class="col">
+                                <div class="card-body">
+                                <p class="card-text">
+                                    Управленческий и стратегический консалтинг
+                                </p>
+                                <a href="{% url 'service_msc_url' %}">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-3">
+                        <div class="row">
+                            <div class="col-5">
+                                <img src="{% static 'img/services/people.png' %}" class="img-fluid rounded-start" alt="people.png">
+                            </div>
+                            <div class="col">
+                                <div class="card-body">
+                                <p class="card-text">
+                                    Классические маркетинговые исследования
+                                </p>
+                                <a href="{% url 'service_cmr_url' %}">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="card mb-3">
+                        <div class="row">
+                            <div class="col-5">
+                                <img src="{% static 'img/services/mouthpiece.jpg' %}" class="img-fluid rounded-start" alt="homepage-mouthpiece.jpg">
+                            </div>
+                            <div class="col">
+                                <div class="card-body">
+                                <p class="card-text">
+                                    Современные маркетинговые исследования
+                                </p>
+                                <a href="{% url 'service_mmr_url' %}">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-3">
+                        <div class="row">
+                            <div class="col-5">
+                                <img src="{% static 'img/services/microscope.jpg' %}" class="img-fluid rounded-start" alt="homepage-microscope.jpg">
+                            </div>
+                            <div class="col">
+                                <div class="card-body">
+                                <p class="card-text">
+                                    Аутсорсинг маркетинга
+                                </p>
+                                <a href="{% url 'service_mo_url' %}">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="card mb-3">
+                        <div class="row">
+                            <div class="col-5">
+                                <img src="{% static 'img/services/cube.jpg' %}" class="img-fluid rounded-start" alt="cube.jpg">
+                            </div>
+                            <div class="col">
+                                <div class="card-body">
+                                <p class="card-text">
+                                    Оптимизация сайтов и email-рассылка
+                                </p>
+                                <a href="{% url 'service_woem_url' %}">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-3">
+                        <div class="row">
+                            <div class="col-5">
+                                <img src="{% static 'img/services/strawberry.jpg' %}" class="img-fluid rounded-start" alt="strawberry.jpg">
+                            </div>
+                            <div class="col">
+                                <div class="card-body">
+                                <p class="card-text">
+                                    Бизнес-планы
+                                </p>
+                                <a href="{% url 'service_bp_url' %}">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        
+        <!-- <div class="row row-cols-md-2 justify-content-center">
+            <div class="card mb-3">
+                <div class="row">
+                    <div class="col-5">
+                        <img src="{% static 'img/homepage-score.jpg' %}" class="img-fluid rounded-start" alt="homepage-score.jpg">
+                    </div>
+                    <div class="col">
+                        <div class="card-body">
+                        <p class="card-text">
+                            Управленческий и стратегический консалтинг
+                        </p>
+                        <a href="#">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="..." class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="..." class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="..." class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</div>
+{% endblock content %}

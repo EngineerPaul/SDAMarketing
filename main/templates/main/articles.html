@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="guide">
+    <div class="container">
+        <p>
+            <a href="{% url 'homepage_url' %}">Главная</a>
+             >> 
+            Проекты
+        </p>
+    </div>
+    <hr>
+</div>
+<div class="container">
+    <h2>
+        Проекты
+    </h2>
+    <div class="articles">
+        <div class="introduction">
+            <div class="row">
+                <div class="col-8">
+                    <p>
+                        С 2015 года маркетинговое агентство SDA выполнило более 
+                        120 проектов в разных отраслях: приборостроение и 
+                        электроника, пищевая промышленность, строительство, 
+                        туристская отрасль, HoReCa, недвижимость, системная 
+                        интеграция, IT, реклама и дизайн и многие другие. Чтобы 
+                        заказать исследование, направьте запрос sda@sdamarketing.ru 
+                        или позвоните <span class="phone-number">+7 (812) 209-45-37</span>.
+                    </p>
+                </div>
+                <div class="col-4">
+                    <div class="project-list-btn">
+                        <button type="button" class="btn">
+                            Скачать список выполненных проектов маркетингового 
+                            агентства SDA
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="row">
+                <div class="col-8">
+                    <div class="articles-content" id="articles_content">
+                        <!-- content -->
+                    </div>
+                    
+                </div>
+                <div class="col-4 filter">
+                    <h3>Типы материала</h3>
+                    {% for direction in directions %}
+                    <div class="direction_checkbox">
+                        <label for="direction_id_{{direction.id}}" class="checkbox-other">
+                            <input type="checkbox" name="" id="direction_id_{{direction.id}}" onclick="swith_query_param('direction', '{{ direction.id }}')">
+                            <span>{{ direction.title }}</span>
+                        </label>
+                    </div>
+                    {% endfor %}
+                    <h3>Отрасли</h3>
+                    
+                    {% for industry in industries %}
+                    <div class="industry_checkbox">
+                        <label for="industry_id_{{industry.id}}" class="checkbox-other">
+                            <input type="checkbox" name="" id="industry_id_{{industry.id}}" onclick="swith_query_param('industry', '{{ industry.id }}')">
+                            <span>{{ industry.title }}</span>
+                        </label>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>
+
+<script>
+    const articles_api_url = "{% url 'article_list_api_url' %}" // url for fetch request (without query parameters)
+</script>
+
+<script src="{% static 'js/articles.js' %}"></script>
+{% endblock content %}

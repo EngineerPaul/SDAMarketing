@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="guide">
+    <div class="container">
+        <p>
+            <a href="{% url 'homepage_url' %}">Главная</a>
+             >> 
+            <a href="{% url 'articles_url' %}">Статьи</a>
+             >> 
+            {{ article.title|lower|capfirst }}
+        </p>
+    </div>
+    <hr>
+</div>
+<div class="container">
+    <div class="article-detail">
+        <p>
+            <strong>Заголовок:</strong> {{ article.title|lower|capfirst }}
+        </p>
+        <p>
+            <strong>Тип материала:</strong> {{ article.direction }}
+        </p>
+        <p>
+            <strong>Отрасль:</strong> {{ article.industry }}
+        </p>
+        <p>
+            {{ article.content|safe }}
+        </p>
+    </div>
+</div>
+{% endblock content %}

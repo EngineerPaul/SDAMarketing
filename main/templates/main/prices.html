@@ -1,0 +1,559 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="guide">
+    <div class="container">
+        <p>
+            <a href="{% url 'homepage_url' %}">Главная</a>
+             >> 
+            Цены
+        </p>
+    </div>
+    <hr>
+</div>
+<div class="container">
+    <h2>
+        Цены
+    </h2>
+    <div class="prices">
+        <p>
+            Цена маркетингового исследования зависит от многих факторов: методов 
+            получения данных, доступности источников информации, объема выборки, 
+            сложности и размера анкеты и др.
+        </p>
+        <p>
+            Ниже приведены базовые цены и сроки выполнения работ специалистами 
+            маркетингового агентства SDA. 
+        </p>
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col-6">
+                        <p>Метод</p>
+                    </th>
+                    <th scope="col">
+                        <p>Стоимость</p>
+                    </th>
+                    <th scope="col">
+                        <p>Срок</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr class="group-method">
+                    <td colspan="3">
+                        <p class="method-column">
+                            <a href="#">Стратегический консалтинг</a>
+                        </p>
+                    </td>
+                </tr>
+                <tr class="single-method">
+                    <td>
+                        <p class="method-column">
+                            Разработка стратегии компании «под ключ»
+                        </p>
+                    </td>
+                    <td>
+                        <p>от 500 000 руб.</p>
+                    </td>
+                    <td>
+                        <p>4-6 месяцев</p>
+                    </td>
+                </tr>
+                <tr class="single-method">
+                    <td>
+                        <p class="method-column">
+                            Проведение стратегической сессии
+                        </p>
+                    </td>
+                    <td>
+                        <p>от 150 000 руб.</p>
+                    </td>
+                    <td>
+                        <p>7-10 раб. дней</p>
+                    </td>
+                </tr>
+
+                <tr class="group-method">
+                    <td colspan="3">
+                        <p class="method-column">
+                            <a href="#">
+                                Кабинетные маркетинговые исследования (Desk research)
+                            </a>
+                            и бизнес-планирование
+                        </p>
+                    </td>
+                </tr>
+                <tr class="single-method">
+                    <td>
+                        <p class="method-column">
+                            Кабинетное исследование
+                        </p>
+                    </td>
+                    <td>
+                        <p>от 80 000 руб.</p>
+                    </td>
+                    <td>
+                        <p>15-22 раб. дней</p>
+                    </td>
+                </tr>
+                <tr class="single-method">
+                    <td>
+                        <p class="method-column">
+                            Бизнес-план
+                        </p>
+                    </td>
+                    <td>
+                        <p>от 150 000 руб.</p>
+                    </td>
+                    <td>
+                        <p>20-30 раб. дней</p>
+                    </td>
+                </tr>
+                <tr class="single-method">
+                    <td>
+                        <p class="method-column">
+                            Финансовая модель
+                        </p>
+                    </td>
+                    <td>
+                        <p>от 70 000 руб.</p>
+                    </td>
+                    <td>
+                        <p>10-15 раб. дней</p>
+                    </td>
+                </tr>
+                <tr class="single-method">
+                    <td>
+                        <p class="method-column">
+                            Экспресс исследование рынка
+                        </p>
+                    </td>
+                    <td>
+                        <p>50 000 руб.</p>
+                    </td>
+                    <td>
+                        <p>до 7 раб. дней</p>
+                    </td>
+                </tr>
+                <tr class="single-method">
+                    <td>
+                        <p class="method-column">
+                            Базы данных по импорту и экспорту
+                        </p>
+                    </td>
+                    <td>
+                        <p>от 20 000 руб. за 1 код ТН ВЭД</p>
+                    </td>
+                    <td>
+                        <p>2-3 раб. дней</p>
+                    </td>
+                </tr>
+                <tr class="single-method">
+                    <td>
+                        <p class="method-column">
+                            Анализ данных внешнеэкономической деятельности по кодам ТН ВЭД
+                        </p>
+                    </td>
+                    <td>
+                        <p>от 30 000 руб.</p>
+                    </td>
+                    <td>
+                        <p>15-20 раб. дней</p>
+                    </td>
+                </tr>
+
+                <tr class="group-method">
+                    <td colspan="3">
+                        <p class="method-column">
+                            <a href="#">Количественные маркетинговые исследования</a>
+                        </p>
+                    </td>
+                </tr>
+                <tr class="single-method">
+                    <td>
+                        <p class="method-column">
+                            Уличный опрос, опрос в торговых точках
+                        </p>
+                    </td>
+                    <td>
+                        <p>от 45 000 руб./проект</p>
+                    </td>
+                    <td>
+                        <p>7-20 раб. дней</p>
+                    </td>
+                </tr>
+                <tr class="single-method">
+                    <td>
+                        <p class="method-column">
+                            Телефонный опрос
+                        </p>
+                    </td>
+                    <td>
+                        <p>от 42 000 руб./проект</p>
+                    </td>
+                    <td>
+                        <p>7-20 раб. дней</p>
+                    </td>
+                </tr>
+                <tr class="single-method">
+                    <td>
+                        <p class="method-column">
+                            Холл-тест
+                        </p>
+                    </td>
+                    <td>
+                        <p>от 62 000 руб./проект</p>
+                    </td>
+                    <td>
+                        <p>7-20 раб. дней</p>
+                    </td>
+                </tr>
+                <tr class="single-method">
+                    <td>
+                        <p class="method-column">
+                            Онлай-опрос (CAWI)
+                        </p>
+                    </td>
+                    <td>
+                        <p>от 40 000 руб./проект</p>
+                    </td>
+                    <td>
+                        <p>7-20 раб. дней</p>
+                    </td>
+                </tr>
+                <tr class="single-method">
+                    <td>
+                        <p class="method-column">
+                            Аудит товаров (retail audit)
+                        </p>
+                    </td>
+                    <td>
+                        <p>от 53 000 руб./проект</p>
+                    </td>
+                    <td>
+                        <p>10-25 раб. дней</p>
+                    </td>
+                </tr>
+
+                <tr class="group-method">
+                    <td colspan="3">
+                        <p class="method-column">
+                            <a href="#">Качественные маркетинговые исследования</a>
+                        </p>
+                    </td>
+                </tr>
+                <tr class="single-method">
+                    <td>
+                        <p class="method-column">
+                            <a href="#">Тайный покупатель</a>
+                        </p>
+                    </td>
+                    <td>
+                        <p>от 1 000 руб./проект</p>
+                    </td>
+                    <td>
+                        <p>1-20 раб. дней</p>
+                    </td>
+                </tr>
+                <tr class="single-method">
+                    <td>
+                        <p class="method-column">
+                            Глубинное интервью
+                        </p>
+                    </td>
+                    <td>
+                        <p>от 4 500 руб./ интервью</p>
+                    </td>
+                    <td>
+                        <p>3-10 раб. дней</p>
+                    </td>
+                </tr>
+                <tr class="single-method">
+                    <td>
+                        <p class="method-column">
+                            Фокус-группа
+                        </p>
+                    </td>
+                    <td>
+                        <p>от 65 000 руб.</p>
+                    </td>
+                    <td>
+                        <p>10-20 раб. дней</p>
+                    </td>
+                </tr>
+                <tr class="single-method">
+                    <td>
+                        <p class="method-column">
+                            Онлайн фокус-группа
+                        </p>
+                    </td>
+                    <td>
+                        <p>от 35 000 руб.</p>
+                    </td>
+                    <td>
+                        <p>5-10 раб. дней</p>
+                    </td>
+                </tr>
+                <tr class="single-method">
+                    <td>
+                        <p class="method-column">
+                            Ценовой мониторинг
+                        </p>
+                    </td>
+                    <td>
+                        <p>от 53 000 руб.</p>
+                    </td>
+                    <td>
+                        <p>10-20 раб. дней</p>
+                    </td>
+                </tr>
+
+                <tr class="group-method">
+                    <td colspan="3">
+                        <p class="method-column">
+                            <a href="#">Современные маркетинговые исследования</a>
+                        </p>
+                    </td>
+                </tr>
+                <tr class="single-method">
+                    <td>
+                        <p class="method-column">
+                            Недельный семинар Customer development
+                        </p>
+                    </td>
+                    <td>
+                        <p>300 000 руб.</p>
+                    </td>
+                    <td>
+                        <p>5 раб. дней</p>
+                    </td>
+                </tr>
+                <tr class="single-method">
+                    <td>
+                        <p class="method-column">
+                            Foresight-сессия
+                        </p>
+                    </td>
+                    <td>
+                        <p>150 000 руб.</p>
+                    </td>
+                    <td>
+                        <p>2 раб.дня</p>
+                    </td>
+                </tr>
+                <tr class="single-method">
+                    <td>
+                        <p class="method-column">
+                            Conjoint-анализ
+                        </p>
+                    </td>
+                    <td>
+                        <p>от 53 000 руб.</p>
+                    </td>
+                    <td>
+                        <p>10-15 раб. дней</p>
+                    </td>
+                </tr>
+                <tr class="single-method">
+                    <td>
+                        <p class="method-column">
+                            Ux-тестирование
+                        </p>
+                    </td>
+                    <td>
+                        <p>от 59 000 руб</p>
+                    </td>
+                    <td>
+                        <p>10-15 раб. дней</p>
+                    </td>
+                </tr>
+
+                <tr class="group-method">
+                    <td colspan="3">
+                        <p class="method-column">
+                            Обработка информации
+                        </p>
+                    </td>
+                </tr>
+                <tr class="single-method">
+                    <td>
+                        <p class="method-column">
+                            Анализ данных
+                        </p>
+                    </td>
+                    <td>
+                        <p>от 40 000 руб.</p>
+                    </td>
+                    <td>
+                        <p>10-15 раб. дней</p>
+                    </td>
+                </tr>
+                <tr class="single-method">
+                    <td>
+                        <p class="method-column">
+                            Разработка анкеты опроса
+                        </p>
+                    </td>
+                    <td>
+                        <p>от 13 000 руб.</p>
+                    </td>
+                    <td>
+                        <p>5-10 раб. дней</p>
+                    </td>
+                </tr>
+                <tr class="single-method">
+                    <td>
+                        <p class="method-column">
+                            Транскрибирование аудио- и видеоинформации в текст
+                        </p>
+                    </td>
+                    <td>
+                        <p>от 2 500 руб.</p>
+                    </td>
+                    <td>
+                        <p>2-5 раб. дней</p>
+                    </td>
+                </tr>
+
+                <tr class="group-method">
+                    <td colspan="3">
+                        <p class="method-column">
+                            <a href="#">Аутсорсинг маркетинга</a>
+                        </p>
+                    </td>
+                </tr>
+                <tr class="single-method">
+                    <td>
+                        <p class="method-column">
+                            Маркетинговое сопровождение компаний и проектов, 
+                            внешний отдел маркетинга
+                        </p>
+                    </td>
+                    <td>
+                        <p>от 35 900 руб/мес</p>
+                        <p>
+                            <a href="#">подробнее</a>
+                        </p>
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr class="group-method">
+                    <td colspan="3">
+                        <p class="method-column">
+                            <a href="#">Бизнес-справка</a>
+                        </p>
+                    </td>
+                </tr>
+                <tr class="single-method">
+                    <td>
+                        <p class="method-column">
+                            Бизнес-справка о компании или группе компаний
+                        </p>
+                    </td>
+                    <td>
+                        <p>от 5 000 руб.</p>
+                    </td>
+                    <td>
+                        <p>3-7 раб. дней</p>
+                    </td>
+                </tr>
+
+                <tr class="group-method">
+                    <td colspan="3">
+                        <p class="method-column">
+                            Другие услуги
+                        </p>
+                    </td>
+                </tr>
+                <tr class="single-method">
+                    <td>
+                        <p class="method-column">
+                            Распространение РИМ по почтовым ящикам
+                        </p>
+                    </td>
+                    <td>
+                        <p>от 50 000 руб.</p>
+                    </td>
+                    <td>
+                        <p>2-15 раб. дней</p>
+                    </td>
+                </tr>
+                <tr class="single-method">
+                    <td>
+                        <p class="method-column">
+                            Написание SEO-статей (от 10 000 печатных символов)
+                        </p>
+                    </td>
+                    <td>
+                        <p>от 4 500 руб.</p>
+                    </td>
+                    <td>
+                        <p>5-20 раб. дней</p>
+                    </td>
+                </tr>
+                <tr class="single-method">
+                    <td>
+                        <p class="method-column">
+                            Рекрутинг респондентов
+                        </p>
+                    </td>
+                    <td>
+                        <p>от 700 руб.</p>
+                    </td>
+                    <td>
+                        <p>2-10 раб. дней</p>
+                    </td>
+                </tr>
+                <tr class="single-method">
+                    <td>
+                        <p class="method-column">
+                            Подготовка презентации
+                        </p>
+                    </td>
+                    <td>
+                        <p>от 20 000 руб.</p>
+                    </td>
+                    <td>
+                        <p>5-15 раб. дней</p>
+                    </td>
+                </tr>
+                {% for title, costs in costgroups.items %}
+
+                <tr class="group-method">
+                    <td colspan="3">
+                        <div class="group-title">
+                            {{ title|safe }}
+                        </div>
+                    </td>
+                </tr>
+                {% for cost in costs %}
+                <tr class="single-method">
+                    <td>
+                        <div class="cost-title">
+                            {{ cost.title|safe|capfirst }}
+                        </div>
+                    </td>
+                    <td>
+                        <p>{{ cost.cost|safe }}</p>
+                    </td>
+                    <td>
+                        <p>{{ cost.term|safe }}</p>
+                    </td>
+                </tr>
+                {% endfor %}
+                {% endfor %}
+            </tbody>
+        </table>
+        <p>
+            Уточняйте стоимость в маркетинговом агентстве SDA по телефону 
+            <span class="phone-number">+7&nbsp;(812)&nbsp;209-45-37</span> 
+            или через запрос на электронную почту sda@sdamarketing.ru
+        </p>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,179 @@
+@media (max-width: 1199px) {
+
+    /* horizontal menu invisible */
+    .nav-menu ul {
+        display: block;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .nav-menu {
+        position: relative;
+    }
+
+    /* display bars button */
+    .header .nav-menu .toggleMenu {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    /* remove label checkbock */
+    .header .nav-menu [type="checkbox"] {
+        display: none;
+    }
+
+    /* place bars button to the right side */
+    .header .col.ms-auto {
+        min-width: 60px;
+        text-align: right;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    /* display menu list on click in 0.7 second */
+    input.toggleMenu:checked ~ ul {
+        display: block;
+        visibility: visible;
+        opacity: 1;
+        transition: opacity .7s;
+    }
+
+    /* place drop-down menu */
+    ul.horizontal-menu {
+        position: absolute;
+        height: auto;
+        right: 0;
+        top: 64px;
+    }
+
+    .header .nav-menu ul {
+        width: 30%;
+        min-width: 200px;
+        margin-top: 3px;
+        box-shadow: 5px 5px 10px -5px gray,
+        -5px 5px 10px -5px gray;
+    }
+
+    .header .nav-menu ul li {
+        display: block;
+        background-color: white;
+    }
+
+    /* fill color on hover */
+    .header .nav-menu ul li:hover {
+        background: #f3f3f3;
+    }
+
+    .header ul.horizontal-menu {
+        line-height: 50px;
+    }
+
+    /* "a" tag is filling all place */
+    .header ul.horizontal-menu a {
+        display: block;
+        margin-right: 1rem;
+    }
+
+    .header ul.horizontal-menu hr {
+        margin: 0;
+        opacity: 1;
+        background-color:rgb(194, 192, 192);
+    }
+
+}
+
+@media (max-width: 992px) {
+    .articles > .introduction > .row > .col-8 {
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .articles > .introduction > .row > .col-4 {
+        min-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .welcome-page .homepage-products .row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .welcome-page .homepage-products .row .col {
+        padding: 0px 6px;
+        max-width: 450px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .welcome-page .homepage-products .row .col .card {
+        margin-bottom: 10px;
+    }
+
+    .btn-slider {
+        right: calc(25px - 50%);
+    }
+
+    /* Articles */
+
+    .articles .row .col-8 {
+        padding: 0 12px;
+    }
+
+    .articles .row .col-8,
+    .articles .row .col-4 {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .articles .row .col-4 .articles-list-btn {
+        width: 280px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .articles .content .row > .col-4.filter {
+        order: -1;
+        margin-bottom: 30px;
+    }
+
+}
+
+@media (max-width: 575px) {
+
+    /* Vacancies */
+
+    .vacancies .vacancy .vacancy-description a {
+        margin-right: 5%;
+        font-size: 16px;
+    }
+
+}
+
+@media (max-width: 450px) {
+
+    .header .nav-menu ul {
+        width: 100vw;
+        right: -12px;
+        text-align: center;
+    }
+
+    ul.horizontal-menu {
+        position: absolute;
+        height: 0px;
+        right: 0;
+        top: 64px;
+        width: 100%;
+    }
+
+    .header ul.horizontal-menu a {
+        display: block;
+        margin-right: 0;
+    }
+
+}
