@@ -435,6 +435,7 @@ span.phone-number {
 }
 
 .articles .articles-content p {
+    color: #54595F;
     margin-bottom: 150px; /* temporarily */
 }
 
@@ -506,6 +507,14 @@ span.phone-number {
 .checkbox-other input[type=checkbox]:disabled + span:before {
     filter: grayscale(100%);
     opacity: 0.6;
+}
+
+
+/* Article detail */
+
+.article-detail h5,
+.article-detail h6 {
+    color: #54595F;
 }
 
 

@@ -1,3 +1,4 @@
+import os
 from typing import List
 
 from django.views.generic import (
@@ -21,47 +22,47 @@ from .serializers import ArticleListSerializer
 
 
 class Homepage(TemplateView):
-    template_name = r'main\index.html'
+    template_name = os.path.join('main', 'index.html')
 
 
 class About_us_page(TemplateView):
-    template_name = r'main\about_us.html'
+    template_name = os.path.join('main', 'about_us.html')
 
 
 class Services_page(TemplateView):
-    template_name = r'main\services.html'
+    template_name = os.path.join('main', 'services.html')
 
 
 # 6 next classes like Service_page_... are 6 services page
 
 class Service_page_MSC(TemplateView):
     """ Service page of Management and strategic consulting """
-    template_name = r'main\services\msc.html'
+    template_name = os.path.join('main', 'services', 'msc.html')
 
 
 class Service_page_CMR(TemplateView):
     """ Service page of Classic Marketing Research """
-    template_name = r'main\services\cmr.html'
+    template_name = os.path.join('main', 'services', 'cmr.html')
 
 
 class Service_page_MMR(TemplateView):
     """ Service page of Modern marketing research """
-    template_name = r'main\services\mmr.html'
+    template_name = os.path.join('main', 'services', 'mmr.html')
 
 
 class Service_page_MO(TemplateView):
     """ Service page of Marketing outsourcing """
-    template_name = r'main\services\mo.html'
+    template_name = os.path.join('main', 'services', 'mo.html')
 
 
 class Service_page_WOEM(TemplateView):
     """ Service page of Website optimization and email marketing """
-    template_name = r'main\services\woem.html'
+    template_name = os.path.join('main', 'services', 'woem.html')
 
 
 class Service_page_BP(TemplateView):
     """ Service page of Business plans """
-    template_name = r'main\services\bp.html'
+    template_name = os.path.join('main', 'services', 'bp.html')
 
 
 class Prices_page(ListView):
@@ -69,7 +70,7 @@ class Prices_page(ListView):
 
     model = CostGroup
     context_object_name = 'costgroups'
-    template_name = r'main\prices.html'
+    template_name = os.path.join('main', 'prices.html')
 
     def get_queryset(self):
         """ Function return dict of cost groups (CostGroup model) and costs
@@ -84,7 +85,7 @@ class ArticlesPageView(TemplateView):
     Context directions and industies are filters of queryset. Handles the
     request class ArticleListAPI. """
 
-    template_name = r'main\articles.html'
+    template_name = os.path.join('main', 'articles.html')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -97,7 +98,7 @@ class ArticleDetail(DetailView):
     """ Page of specific article description """
 
     model = Article
-    template_name = r'main\articledetail.html'
+    template_name = os.path.join('main', 'articledetail.html')
     context_object_name = 'article'
 
 
@@ -106,17 +107,17 @@ class Vacancies_page(ListView):
 
     model = Vacancy
     context_object_name = 'vacancies'
-    template_name = r'main\vacancies.html'
+    template_name = os.path.join('main', 'vacancies.html')
 
 
 class Contacts_page(TemplateView):
     """ Page of contacts """
-    template_name = r'main\contacts.html'
+    template_name = os.path.join('main', 'contacts.html')
 
 
 class Dictionary_page(TemplateView):
     """ Page of terms definitions """
-    template_name = r'main\dictionary.html'
+    template_name = os.path.join('main', 'dictionary.html')
 
 
 class FeedBackFormView(RedirectView):
@@ -159,7 +160,7 @@ class FeedBackAdminView(AdminAccessMixin, ListView):
 
     model = FeedBack
     context_object_name = 'feedbacks'
-    template_name = r'main\admin\feedback.html'
+    template_name = os.path.join('main', 'admin', 'feedback.html')
 
     def get_queryset(self):
         queryset = super().get_queryset().filter(answered=False)

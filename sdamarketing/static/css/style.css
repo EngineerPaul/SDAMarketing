@@ -8,6 +8,7 @@ body {
     --e-global-color-text: #7A7A7A;
     --e-global-family-text: "Roboto", sans-serif;
     --e-global-link-background-color: #B54B3A;
+    --e-global-link-color: #DC5130;
 }
 
 p {
@@ -18,13 +19,13 @@ p {
 }
 
 a {
-    color: #dc5130;
+    color: var(--e-global-link-color);
     text-decoration: none;
     outline: none;
 }
 
 a:hover {
-    color: #dc5130;
+    color: var(--e-global-link-color);
     text-decoration: underline;
 }
 
@@ -44,7 +45,7 @@ a:hover {
 }
 
 .site-content .guide p a:hover {
-    color: #dc5130;
+    color: var(--e-global-link-color);
     text-decoration: none;
 }
 
@@ -170,7 +171,7 @@ span.phone-number {
 }
 
 .welcome-page .card .card-title a.card-link-four {
-    color: #DC5130;
+    color: var(--e-global-link-color);
 }
 
 .welcome-page .card .card-body {
@@ -438,6 +439,15 @@ span.phone-number {
     margin-bottom: 150px; /* temporarily */
 }
 
+.articles .articles-content p a {
+    color: #54595F;
+    font-weight: 600;
+}
+
+.articles .articles-content p a:hover {
+    color: var(--e-global-link-color);
+}
+
 .articles .col-4.filter {
     margin-top: 0;
 }
@@ -506,6 +516,24 @@ span.phone-number {
 .checkbox-other input[type=checkbox]:disabled + span:before {
     filter: grayscale(100%);
     opacity: 0.6;
+}
+
+
+/* Article detail */
+
+.article-detail .article-detail-description {
+    margin-bottom: 30px;
+}
+
+.article-detail .article-detail-description h5,
+.article-detail .article-detail-description h6 {
+    color: #54595F;
+    margin-bottom: 10px;
+}
+
+.article-detail .article-detail-content {
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 

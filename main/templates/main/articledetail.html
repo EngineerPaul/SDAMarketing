@@ -16,18 +16,22 @@
 </div>
 <div class="container">
     <div class="article-detail">
-        <p>
-            <strong>Заголовок:</strong> {{ article.title|lower|capfirst }}
-        </p>
-        <p>
-            <strong>Тип материала:</strong> {{ article.direction }}
-        </p>
-        <p>
-            <strong>Отрасль:</strong> {{ article.industry }}
-        </p>
-        <p>
-            {{ article.content|safe }}
-        </p>
+        <div class="article-detail-description">
+            <h5>
+                <strong>Название статьи:</strong> {{ article.title|lower|capfirst }}
+            </h5>
+            <h6>
+                <strong>Тип материала:</strong> {{ article.direction }}
+            </h6>
+            <h6>
+                <strong>Отрасль:</strong> {% for industry in article.industry.all %} {{ industry }}{% if not forloop.last %}, {% endif %} {% endfor %}
+            </h6>
+        </div>
+        <div class="article-detail-content">
+            <p>
+                {{ article.content|safe }}
+            </p>
+        </div>
     </div>
 </div>
 {% endblock content %}
