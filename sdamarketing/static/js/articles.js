@@ -146,7 +146,7 @@ function get_href(pathname, param_dict) {
 
 // GETTING THE FIRST PAGE
 
-let query_params = Object.assign({'page': page}, get_query_params())
+let query_params = Object.assign({'page': [page]}, get_query_params())
 url = get_url(articles_api_url, query_params)
 
 fetch(url)
@@ -175,7 +175,7 @@ window.addEventListener("scroll", function() {
             is_perfoming = true
 
             if (counter<count) {
-                let query_params = Object.assign({'page': page}, get_query_params())
+                let query_params = Object.assign({'page': [page]}, get_query_params())
                 url = get_url(articles_api_url, query_params)
 
                 fetch(url)

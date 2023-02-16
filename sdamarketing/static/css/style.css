@@ -403,24 +403,24 @@ span.phone-number {
 
 /* Articles */
 
-.articles .row {
+.articles .introduction .row {
     margin-bottom: 40px;
 }
 
-.articles .row p {
+.articles .introduction .row p {
     margin: 10px 0;
 }
 
-.articles .row .col-8 {
+.articles .introduction .row .col-8 {
     padding-right: 30px;
 }
 
-.articles .row .col-4 {
+.articles .introduction .row .col-4 {
     margin-top: auto;
     margin-bottom: auto;
 }
 
-.articles .row .project-list-btn button.btn {
+.articles .introduction .row .project-list-btn button.btn {
     margin: 10px 0;
     padding: 16px 24px;
     font-size: 16px;
@@ -431,26 +431,81 @@ span.phone-number {
     border-radius: 5px;
 }
 
-.articles .articles-content {
+.articles .search .row {
+    margin-bottom: 40px;
+}
+
+.articles .search .col-btn {
+    min-width: 140px;
+    max-width: 140px;
+}
+
+.articles .articles-content,
+.search .articles-content {
     margin-bottom: 50px;
 }
 
-.articles .articles-content p {
+.articles .articles-content p,
+.search .articles-content p {
     margin-bottom: 150px; /* temporarily */
 }
 
-.articles .articles-content p a {
+.articles .articles-content p a,
+.search .articles-content p a {
     color: #54595F;
     font-weight: 600;
 }
 
-.articles .articles-content p a:hover {
+.articles .articles-content p a:hover,
+.search .articles-content p a:hover {
     color: var(--e-global-link-color);
 }
 
 .articles .col-4.filter {
     margin-top: 0;
 }
+
+
+/* Search */
+
+.search .introduction .row {
+    margin-bottom: 40px;
+}
+
+.search .introduction .row p {
+    margin: 10px 0;
+}
+
+.search .introduction .row .col-8 {
+    padding-right: 30px;
+}
+
+.search .introduction .row .col-4 {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.search .introduction .row .project-list-btn button.btn {
+    margin: 10px 0;
+    padding: 16px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    background-color: var(--e-global-link-background-color);
+    border-color: #dc3545;
+    border-radius: 5px;
+}
+
+/* .search a.back-btn {
+    display: inline-block;
+    margin: 20px;
+    font-weight: 500;
+    color: #fff;
+    padding: 16px 24px;
+    background-color: var(--e-global-link-background-color);
+    border-color: #dc3545;
+    border-radius: 5px;
+} */
 
 
 /* article checkbox */

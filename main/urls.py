@@ -3,7 +3,7 @@ from django.urls import path
 from .views import (
     # Templates
     Homepage, About_us_page, Services_page, Prices_page, ArticlesPageView,
-    ArticleDetail, Vacancies_page, Contacts_page, Dictionary_page,
+    ArticleDetail, SearchView, Vacancies_page, Contacts_page, Dictionary_page,
     Service_page_MSC, Service_page_CMR, Service_page_MMR,
     Service_page_MO, Service_page_WOEM, Service_page_BP,
     FeedBackFormView, FeedBackAdminView, FeedBackAnsweredFormView,
@@ -21,6 +21,8 @@ urlpatterns = [
     path("prices", Prices_page.as_view(), name='prices_url'),
     path('articles', ArticlesPageView.as_view(),
          name='articles_url'),
+    path('articles/search', SearchView.as_view(),
+         name='article_search_url'),
     path('articles/<str:slug>', ArticleDetail.as_view(),
          name='article_detail_url'),
     path("vacancies", Vacancies_page.as_view(), name='vacancies_url'),

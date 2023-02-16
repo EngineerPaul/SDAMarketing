@@ -43,6 +43,20 @@
         <div class="content">
             <div class="row">
                 <div class="col-8">
+                    <div class="search">
+                        <form action="{% url 'article_search_url' %}" method="get">
+                            <div class="row">
+                                <div class="col">
+                                    <input class="form-control" type="text" name="search" id="" placeholder="Найти...">
+                                </div>
+                                <div class="col col-btn">
+                                    <input class="form-control" type="submit" value="Поиск">
+                                </div>
+                            </div>
+                            
+                            
+                        </form>
+                    </div>
                     <div class="articles-content" id="articles_content">
                         <!-- content -->
                     </div>

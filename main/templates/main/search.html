@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="guide">
+    <div class="container">
+        <p>
+            <a href="{% url 'homepage_url' %}">Главная</a>
+             >> 
+             <a href="{% url 'articles_url' %}">Проекты</a>
+             >> 
+            {{ search }}
+        </p>
+    </div>
+    <hr>
+</div>
+<div class="container">
+    <h2>
+        Проекты
+    </h2>
+    <div class="search">
+        <div class="introduction">
+            <div class="row">
+                <div class="col-8">
+                    <p>
+                        С 2015 года маркетинговое агентство SDA выполнило более 
+                        120 проектов в разных отраслях: приборостроение и 
+                        электроника, пищевая промышленность, строительство, 
+                        туристская отрасль, HoReCa, недвижимость, системная 
+                        интеграция, IT, реклама и дизайн и многие другие. Чтобы 
+                        заказать исследование, направьте запрос sda@sdamarketing.ru 
+                        или позвоните <span class="phone-number">+7 (812) 209-45-37</span>.
+                    </p>
+                </div>
+                <div class="col-4">
+                    <div class="project-list-btn">
+                        <button type="button" class="btn">
+                            Скачать список выполненных проектов маркетингового 
+                            агентства SDA
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <a class="back-btn" href="{% url 'articles_url' %}">Вернуться</a> -->
+        <div class="articles-content">
+            {% if search_list %}
+                {% for obj in search_list %}
+                <p>
+                    <a href='{{ obj.get_absolute_url }}'>
+                        {{ obj.title }}
+                    </a>
+                </p>
+                {% endfor %}
+            {% else %}
+                <p>К сожалению, по запросу "{{ search }}" ничего не найдено...</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

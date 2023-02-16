@@ -102,6 +102,22 @@ class ArticleDetail(DetailView):
     context_object_name = 'article'
 
 
+class SearchView(ListView):
+    model = Article
+    context_object_name = 'search_list'
+    template_name = os.path.join('main', 'search.html')
+
+    def get_queryset(self):
+        return self.model.objects.filter(
+            title__icontains=self.request.GET.get('search').upper()
+        )
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['search'] = self.request.GET.get('search')
+        return context
+
+
 class Vacancies_page(ListView):
     """ Page of vacancies """
 
