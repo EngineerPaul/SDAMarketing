@@ -401,26 +401,26 @@ span.phone-number {
 }
 
 
-/* Articles */
+/* Project */
 
-.articles .introduction .row {
+.projects .introduction .row {
     margin-bottom: 40px;
 }
 
-.articles .introduction .row p {
+.projects .introduction .row p {
     margin: 10px 0;
 }
 
-.articles .introduction .row .col-8 {
+.projects .introduction .row .col-8 {
     padding-right: 30px;
 }
 
-.articles .introduction .row .col-4 {
+.projects .introduction .row .col-4 {
     margin-top: auto;
     margin-bottom: auto;
 }
 
-.articles .introduction .row .project-list-btn button.btn {
+.projects .introduction .row .project-list-btn a.btn {
     margin: 10px 0;
     padding: 16px 24px;
     font-size: 16px;
@@ -431,37 +431,37 @@ span.phone-number {
     border-radius: 5px;
 }
 
-.articles .search .row {
+.projects .search .row {
     margin-bottom: 40px;
 }
 
-.articles .search .col-btn {
+.projects .search .col-btn {
     min-width: 140px;
     max-width: 140px;
 }
 
-.articles .articles-content,
-.search .articles-content {
+.projects .projects-content,
+.search .projects-content {
     margin-bottom: 50px;
 }
 
-.articles .articles-content p,
-.search .articles-content p {
+.projects .projects-content p,
+.search .projects-content p {
     margin-bottom: 150px; /* temporarily */
 }
 
-.articles .articles-content p a,
-.search .articles-content p a {
+.projects .projects-content p a,
+.search .projects-content p a {
     color: #54595F;
     font-weight: 600;
 }
 
-.articles .articles-content p a:hover,
-.search .articles-content p a:hover {
+.projects .projects-content p a:hover,
+.search .projects-content p a:hover {
     color: var(--e-global-link-color);
 }
 
-.articles .col-4.filter {
+.projects .col-4.filter {
     margin-top: 0;
 }
 
@@ -485,7 +485,7 @@ span.phone-number {
     margin-bottom: auto;
 }
 
-.search .introduction .row .project-list-btn button.btn {
+.search .introduction .row .project-list-btn a.btn {
     margin: 10px 0;
     padding: 16px 24px;
     font-size: 16px;
@@ -508,7 +508,7 @@ span.phone-number {
 } */
 
 
-/* article checkbox */
+/* project checkbox */
 /* https://xn----7sbbaqhlkm9ah9aiq.net/news-new/css-ctilizatsiya-checkbox.html */
 .checkbox-other {
     display: block;
@@ -574,19 +574,19 @@ span.phone-number {
 }
 
 
-/* Article detail */
+/* Project detail */
 
-.article-detail .article-detail-description {
+.project-detail .project-detail-description {
     margin-bottom: 30px;
 }
 
-.article-detail .article-detail-description h5,
-.article-detail .article-detail-description h6 {
+.project-detail .project-detail-description h5,
+.project-detail .project-detail-description h6 {
     color: #54595F;
     margin-bottom: 10px;
 }
 
-.article-detail .article-detail-content {
+.project-detail .project-detail-content {
     margin-left: 30px;
     margin-right: 30px;
 }
