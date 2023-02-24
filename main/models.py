@@ -24,7 +24,7 @@ class Vacancy(models.Model):
 
 
 class Direction(models.Model):
-    """ Model for directions for Article model """
+    """ Model for directions for Project model """
 
     title = models.CharField(
         max_length=31,
@@ -44,7 +44,7 @@ class Direction(models.Model):
 
 
 class Industry(models.Model):
-    """ Model for industries for Article model """
+    """ Model for industries for Project model """
 
     title = models.CharField(
         max_length=127,
@@ -63,8 +63,8 @@ class Industry(models.Model):
         ordering = ('title', )
 
 
-class Article(models.Model):
-    """ Model for list of projects and articles """
+class Project(models.Model):  # is Project model
+    """ Model for list of projects and projects """
 
     direction = models.ForeignKey(
         Direction,
@@ -103,7 +103,7 @@ class Article(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('article_detail_url', kwargs={'slug': self.slug})
+        return reverse('project_detail_url', kwargs={'slug': self.slug})
 
     class Meta:
         verbose_name = 'Статья'

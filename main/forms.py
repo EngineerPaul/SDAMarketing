@@ -47,7 +47,7 @@ class CostGroupForm(forms.ModelForm):
         fields = '__all__'
 
 
-class ArticleForm(forms.ModelForm):
+class ProjectForm(forms.ModelForm):
     content = forms.CharField(
         widget=CKEditorUploadingWidget(),
         label='Содержание',

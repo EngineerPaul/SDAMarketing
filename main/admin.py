@@ -1,10 +1,10 @@
 from django.contrib import admin
 
 from .models import (
-    Cost, CostGroup, Article, Direction, Industry, Vacancy, FeedBack
+    Cost, CostGroup, Project, Direction, Industry, Vacancy, FeedBack
 )
 from .forms import (
-    VacancyForm, CostForm, CostGroupForm, ArticleForm
+    VacancyForm, CostForm, CostGroupForm, ProjectForm
 )
 
 
@@ -23,8 +23,8 @@ class CostGroupAdmin(admin.ModelAdmin):
         return obj.id
 
 
-class ArticleAdmin(admin.ModelAdmin):
-    form = ArticleForm
+class ProjectAdmin(admin.ModelAdmin):
+    form = ProjectForm
     prepopulated_fields = {"slug": ("title", ), }
 
 
@@ -37,6 +37,7 @@ class VacancyAdmin(admin.ModelAdmin):
 class FeedBackAdmin(admin.ModelAdmin):
     list_display = ('name', 'contact', 'answered', )
     list_display_links = ('name',)
+    ordering = ('answered', 'name')
 
     def title(self, obj):
         return obj.id
@@ -45,7 +46,7 @@ class FeedBackAdmin(admin.ModelAdmin):
 admin.site.register(Cost, CostAdmin)
 admin.site.register(CostGroup, CostGroupAdmin)
 
-admin.site.register(Article, ArticleAdmin)
+admin.site.register(Project, ProjectAdmin)
 admin.site.register(Direction)
 admin.site.register(Industry)
 

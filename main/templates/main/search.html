@@ -7,7 +7,7 @@
         <p>
             <a href="{% url 'homepage_url' %}">Главная</a>
              >> 
-             <a href="{% url 'articles_url' %}">Проекты</a>
+             <a href="{% url 'projects_url' %}">Проекты</a>
              >> 
             {{ search }}
         </p>
@@ -42,7 +42,7 @@
                 </div>
             </div>
         </div>
-        <!-- <a class="back-btn" href="{% url 'articles_url' %}">Вернуться</a> -->
+        <!-- <a class="back-btn" href="{% url 'projects_url' %}">Вернуться</a> -->
         <div class="articles-content">
             {% if search_list %}
                 {% for obj in search_list %}

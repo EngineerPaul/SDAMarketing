@@ -1,10 +1,10 @@
 from rest_framework import serializers
 
-from .models import Article
+from .models import Project
 
 
-class ArticleListSerializer(serializers.ModelSerializer):
+class ProjectListSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Article
+        model = Project
         fields = ('title', 'get_absolute_url')

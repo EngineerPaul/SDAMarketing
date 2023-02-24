@@ -16,7 +16,7 @@
     <h2>
         Проекты
     </h2>
-    <div class="articles">
+    <div class="projects">
         <div class="introduction">
             <div class="row">
                 <div class="col-8">
@@ -44,7 +44,7 @@
             <div class="row">
                 <div class="col-8">
                     <div class="search">
-                        <form action="{% url 'article_search_url' %}" method="get">
+                        <form action="{% url 'project_search_url' %}" method="get">
                             <div class="row">
                                 <div class="col">
                                     <input class="form-control" type="text" name="search" id="" placeholder="Найти...">
@@ -57,7 +57,7 @@
                             
                         </form>
                     </div>
-                    <div class="articles-content" id="articles_content">
+                    <div class="projects-content" id="projects_content">
                         <!-- content -->
                     </div>
                     
@@ -89,8 +89,8 @@
 </div>
 
 <script>
-    const articles_api_url = "{% url 'article_list_api_url' %}" // url for fetch request (without query parameters)
+    const projects_api_url = "{% url 'project_list_api_url' %}" // url for fetch request (without query parameters)
 </script>
 
-<script src="{% static 'js/articles.js' %}"></script>
+<script src="{% static 'js/projects.js' %}"></script>
 {% endblock content %}

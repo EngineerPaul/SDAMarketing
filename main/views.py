@@ -14,11 +14,11 @@ from rest_framework.permissions import AllowAny
 from rest_framework.pagination import PageNumberPagination
 
 from .models import (
-    Cost, CostGroup, Article, Direction, Industry,
+    Cost, CostGroup, Project, Direction, Industry,
     Vacancy, FeedBack,
 )
 from .forms import FeedBackForm
-from .serializers import ArticleListSerializer
+from .serializers import ProjectListSerializer
 
 
 class Homepage(TemplateView):
@@ -80,12 +80,12 @@ class Prices_page(ListView):
         return queryset
 
 
-class ArticlesPageView(TemplateView):
-    """ Page of all articles. Content is loaded by asynchronous JS requests.
+class ProjectsPageView(TemplateView):
+    """ Page of all projects. Content is loaded by asynchronous JS requests.
     Context directions and industies are filters of queryset. Handles the
-    request class ArticleListAPI. """
+    request class ProjectListAPI. """
 
-    template_name = os.path.join('main', 'articles.html')
+    template_name = os.path.join('main', 'projects.html')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -94,16 +94,16 @@ class ArticlesPageView(TemplateView):
         return context
 
 
-class ArticleDetail(DetailView):
-    """ Page of specific article description """
+class ProjectDetail(DetailView):
+    """ Page of specific project description """
 
-    model = Article
-    template_name = os.path.join('main', 'articledetail.html')
-    context_object_name = 'article'
+    model = Project
+    template_name = os.path.join('main', 'projectdetail.html')
+    context_object_name = 'project'
 
 
 class SearchView(ListView):
-    model = Article
+    model = Project
     context_object_name = 'search_list'
     template_name = os.path.join('main', 'search.html')
 
@@ -203,22 +203,22 @@ class FeedBackAnsweredFormView(RedirectView):
 
 # API
 
-class ArticlePaginationAPI(PageNumberPagination):
-    """ Pagination of articles by request pages """
+class ProjectPaginationAPI(PageNumberPagination):
+    """ Pagination of projects by request pages """
 
     page_size = 6
     page_size_query_param = 'page_size'
     max_page_size = 10
 
 
-class ArticleListAPI(ListAPIView):
-    """ API class for fetch requests article page. Query params direction and
+class ProjectListAPI(ListAPIView):
+    """ API class for fetch requests project page. Query params direction and
     industry are filters for queryset. """
 
-    queryset = Article.objects.all().order_by('-created_at')
-    serializer_class = ArticleListSerializer
+    queryset = Project.objects.all().order_by('-created_at')
+    serializer_class = ProjectListSerializer
     permission_classes = [AllowAny]
-    pagination_class = ArticlePaginationAPI
+    pagination_class = ProjectPaginationAPI
 
     def get_queryset(self):
         queryset = self.queryset

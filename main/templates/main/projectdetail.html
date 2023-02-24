@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="guide">
+    <div class="container">
+        <p>
+            <a href="{% url 'homepage_url' %}">Главная</a>
+             >> 
+            <a href="{% url 'projects_url' %}">Проекты</a>
+             >> 
+            {{ project.title|lower|capfirst }}
+        </p>
+    </div>
+    <hr>
+</div>
+<div class="container">
+    <div class="project-detail">
+        <div class="project-detail-description">
+            <h5>
+                <strong>Название проекта:</strong> {{ project.title|lower|capfirst }}
+            </h5>
+            <h6>
+                <strong>Тип материала:</strong> {{ project.direction }}
+            </h6>
+            <h6>
+                <strong>Отрасль:</strong> {% for industry in project.industry.all %} {{ industry }}{% if not forloop.last %}, {% endif %} {% endfor %}
+            </h6>
+        </div>
+        <div class="project-detail-content">
+            <p>
+                {{ project.content|safe }}
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock content %}

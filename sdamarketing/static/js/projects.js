@@ -83,12 +83,12 @@ function swith_query_param(param_name, id) {
 
 // COMMON VARIABLES AND FUNCTIONS FOR UPLOADING CONTENT
 
-let count = 0  // count of all upload articles, getting from page one (first request)
-let counter = 0  // count of uploaded articles
+let count = 0  // count of all upload projects, getting from page one (first request)
+let counter = 0  // count of uploaded projects
 let page = 1  // loading page number
 let is_perfoming = false // variable that slows down the call to the next request
 
-let block_id = 'articles_content'  // id of the div block where content will be generated
+let block_id = 'projects_content'  // id of the div block where content will be generated
 let block = document.getElementById(block_id);
 const only_single_filter = true  // only one filter (query parameter) of the same type can be applied
 
@@ -147,7 +147,7 @@ function get_href(pathname, param_dict) {
 // GETTING THE FIRST PAGE
 
 let query_params = Object.assign({'page': [page]}, get_query_params())
-url = get_url(articles_api_url, query_params)
+url = get_url(projects_api_url, query_params)
 
 fetch(url)
 .then(check_status)
@@ -176,7 +176,7 @@ window.addEventListener("scroll", function() {
 
             if (counter<count) {
                 let query_params = Object.assign({'page': [page]}, get_query_params())
-                url = get_url(articles_api_url, query_params)
+                url = get_url(projects_api_url, query_params)
 
                 fetch(url)
                 .then(check_status)
