@@ -1,0 +1,38 @@
+{% load static %}
+
+<link rel="stylesheet" id='msl-main-css' type='text/css' media='all'
+        href="{% static 'slider/css/masterslider.main.css' %}">
+<script type='text/javascript' id='jquery-core-js' src="{% static 'slider/js/jquery.js' %}"></script>
+<link rel="stylesheet" id='msl-main-css' type='text/css' media='all' href="{% static 'slider/css/slider.css' %}">
+
+<div class="slider">
+    <!-- MasterSlider -->
+    <div id="P_MS63f870388a304" class="master-slider-parent msl ms-parent-id-3" style="max-width:100%;">
+        <!-- MasterSlider Main -->
+        <div id="MS63f870388a304" class="master-slider ms-skin-default">
+
+            {% for slide in slider %}
+            <div class="ms-slide" data-delay="3" data-fill-mode="fill">
+                <div class="slider-title">
+                    <div class="slider-content">
+                        {{ slide.title }}
+                    </div>
+                </div>
+
+                <div class="ms-thumb">
+                    <div class="ms-tab-context">
+                        <div class=&quot;ms-tab-context&quot;></div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+        <!-- END MasterSlider Main -->
+    </div>
+    <!-- END MasterSlider -->
+</div>
+
+<script type='text/javascript' src="{% static 'slider/js/use-strict.js' %}"></script>
+<script type='text/javascript' id='jquery-easing-js' src="{% static 'slider/js/jquery.easing.min.js' %}"></script>
+<script type='text/javascript' id='jquery-easing-js' src="{% static 'slider/js/masterslider.min.js' %}"></script>

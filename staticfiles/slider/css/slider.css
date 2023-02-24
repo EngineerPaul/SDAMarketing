@@ -1,0 +1,31 @@
+/* Slider of homepage */
+
+.slider {
+    padding-top: 5px;
+}
+
+.slider .master-slider-parent {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.slider .slider-title {
+    display: table;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    /* background-color: rgb(252, 252, 252); */
+}
+
+.slider .slider-content {
+    color: var(--e-global-color-text);
+    font-weight: 500;
+    font-size: 2.5rem;
+    vertical-align:middle;
+    display:table-cell;
+}
+
+@media (max-width: 450px) {
+    .slider .slider-content {
+        font-size: 1rem;
+    }
+}

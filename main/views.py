@@ -15,7 +15,7 @@ from rest_framework.pagination import PageNumberPagination
 
 from .models import (
     Cost, CostGroup, Project, Direction, Industry,
-    Vacancy, FeedBack,
+    Vacancy, FeedBack, Slider
 )
 from .forms import FeedBackForm
 from .serializers import ProjectListSerializer
@@ -23,6 +23,12 @@ from .serializers import ProjectListSerializer
 
 class Homepage(TemplateView):
     template_name = os.path.join('main', 'index.html')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['carousel_path'] = os.path.join('main', 'inc', '_carousel.html')
+        context['slider'] = Slider.objects.all()
+        return context
 
 
 class About_us_page(TemplateView):

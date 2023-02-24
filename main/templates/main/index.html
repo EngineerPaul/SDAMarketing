@@ -3,6 +3,9 @@
 
 {% block content%}
 <div class="container">
+    {% if slider %}
+    {% include carousel_path %}
+    {% endif %}
     <div class="welcome-page">
         <p>
             <strong>Приветствуем Вас на сайте Маркетингового агентства SDA!</strong>

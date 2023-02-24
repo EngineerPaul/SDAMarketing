@@ -54,10 +54,6 @@ a:hover {
     padding: 10px 0px;
 }
 
-.site-content > .container {
-    padding-top: 30px;
-}
-
 .site-content h2 {
     font-family: Arial;
     color: #54595F;
@@ -71,6 +67,10 @@ span.phone-number {
 
 
 /* Homepage - index */
+
+.welcome-page {
+    padding-top: 10px;
+}
 
 .welcome-page p {
     font-size: 18px;

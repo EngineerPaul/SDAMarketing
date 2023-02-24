@@ -1,7 +1,8 @@
 from django.contrib import admin
 
 from .models import (
-    Cost, CostGroup, Project, Direction, Industry, Vacancy, FeedBack
+    Cost, CostGroup, Project, Direction, Industry, Vacancy, FeedBack,
+    Slider
 )
 from .forms import (
     VacancyForm, CostForm, CostGroupForm, ProjectForm
@@ -43,6 +44,11 @@ class FeedBackAdmin(admin.ModelAdmin):
         return obj.id
 
 
+class SliderAdmin(admin.ModelAdmin):
+    list_display = ('title', )
+    list_display_links = ('title', )
+
+
 admin.site.register(Cost, CostAdmin)
 admin.site.register(CostGroup, CostGroupAdmin)
 
@@ -53,3 +59,5 @@ admin.site.register(Industry)
 admin.site.register(Vacancy, VacancyAdmin)
 
 admin.site.register(FeedBack, FeedBackAdmin)
+
+admin.site.register(Slider, SliderAdmin)

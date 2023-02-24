@@ -205,3 +205,9 @@ class FeedBack(models.Model):
     class Meta:
         verbose_name = 'Feedback'
         verbose_name_plural = 'Feedbacks'
+
+
+class Slider(models.Model):
+    """ Model for posting ad """
+
+    title = models.CharField(max_length=30)
