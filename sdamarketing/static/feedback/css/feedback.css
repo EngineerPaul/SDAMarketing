@@ -1,0 +1,384 @@
+/* Common */
+
+.feedback-container [type="checkbox"] {
+    display: none;
+}
+
+@media (max-width: 450px) {
+    .feedback-container .feedback-switch {
+        display: none;
+    }
+}
+
+
+
+/* Switch button */
+
+.feedback-container .feedback-switch {
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: auto;
+    height: auto;
+    text-indent: 0;
+    position: fixed;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    height: 36px;
+    z-index: 9999999;
+    max-width: 500px;
+    line-height: 36px;
+    -webkit-font-smoothing: subpixel-antialiased!important;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -webkit-text-size-adjust: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-clip: padding-box;
+    transition: max-width .35s ease-in-out;
+    text-shadow: 0 1px 0 rgb(0 0 0 / 15%);
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    
+    background-color: var(--e-global-link-background-color);
+    transition: right .4s ease-in-out,-webkit-transform .4s ease-in-out;
+    transition: right .4s ease-in-out,transform .4s ease-in-out;
+    transition: right .4s ease-in-out,transform .4s ease-in-out,-webkit-transform .4s ease-in-out;
+    right: 0;
+    left: auto;
+    top: auto;
+    bottom: auto;
+    top: 30%;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    border-radius: 25px 25px 0 0;
+    /* background-image: linear-gradient(to bottom,rgba(255,255,255,.15) 0,rgba(255,255,255,0) 100%); */
+
+}
+
+.feedback-container .feedback-switch.change{
+    opacity: 0%;
+    right: -80px;
+}
+
+.feedback-container .feedback-switch:after,
+.feedback-container .feedback-switch:before {
+    content: '';
+    bottom: -6px;
+    height: 40px;
+    width: 42px;
+    position: absolute;
+    z-index: 0;
+    background-repeat: no-repeat;
+}
+
+.feedback-container .feedback-switch::before {
+    content: '';
+    left: -20px;
+    right: auto;
+    bottom: -6px;
+    -webkit-transform: none;
+    transform: none;
+    background-image: url(../svg-sides/left-side.svg);
+}
+
+.feedback-container .feedback-switch::after {
+    content: '';
+    right: -16px;
+    left: auto;
+    bottom: -6px;
+    -webkit-transform: none;
+    transform: none;
+    background-image: url(../svg-sides/right-side.svg);
+
+}
+
+.feedback-container .feedback-switch label {
+    cursor: pointer;
+}
+
+.feedback-container .feedback-switch .feedback-middle-btn {
+    position: relative;
+    z-index: 10;
+    height: 36px;
+    float: left;
+    max-width: 310px;
+    font-weight: 500;
+    transition: max-width .35s ease-in-out,opacity .3s ease-in-out 0s;
+
+    -webkit-transform: none;
+    transform: none;
+
+    float: right;
+    
+    padding-left: 20px;
+    padding-right: 30px;
+    
+}
+
+.feedback-container .feedback-switch .message-icon {
+    height: 36px;
+    width: 36px;
+    text-align: center;
+    line-height: 36px;
+    position: absolute;
+    left: 0;
+    top: -11px;
+    border-radius: 100%;
+    background-clip: padding-box;
+
+    background: #fff;
+    border: 2px solid var(--e-global-link-background-color);
+    color: var(--e-global-link-background-color);
+
+    right: 0;
+    left: auto;
+    top: -11px;
+
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+
+}
+
+.feedback-container .feedback-switch .message-icon::before {
+    display: block;
+    position: relative;
+    top: 8px;
+    font-family: ti-email;
+    content: 'a';
+    line-height: 1em;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    text-shadow: none;
+    -webkit-font-smoothing: antialiased;
+
+    color: var(--e-global-link-background-color);
+
+    font-family: themify;
+    content: '\e75a';
+    top: 7px;
+    left: 0;
+
+}
+
+.feedback-container .feedback-switch .feedback-title {
+    display: block;
+    white-space: nowrap;
+    opacity: 1;
+    height: 36px;
+    line-height: 36px;
+    float: left;
+    max-width: 250px;
+    transition: max-width .35s ease-in-out,opacity .3s ease-in-out 0s;
+    
+    color: #fff;
+
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0;
+    margin-left: 0;
+    padding: 0 10px;
+    margin-right: 10px;
+    -webkit-transform: none;
+    transform: none;
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+}
+
+
+
+
+/* Form */
+
+.feedback-container .feedback-form {
+    position: fixed;
+    background-color: #ffffff;
+    right: -325px;
+    top: 280px;
+    display: block;
+    width: 310px;
+    height: 360px;
+    border: .5px rgb(187, 185, 185) solid;
+    border-radius: 5px;
+
+    transition: right .2s;
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+
+}
+
+.feedback-container .feedback-form.change {
+    right: 80px;
+}
+
+.feedback-container .feedback-header {
+    height: 40px;
+    width: 100%;
+    background-color: var(--e-global-link-background-color);
+    color: #ffffff;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.feedback-container .feedback-header-icon::before {
+    position: absolute;
+    left: 20px;
+    font-family: themify;
+    content: '\e75a';
+}
+
+.feedback-container .feedback-title {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.feedback-container .feedback-description {
+    background-color: #F3F3F3;
+    font-size: 14px;
+    color: var(--e-global-color-text);
+    padding: 10px 30px 10px 30px;
+}
+
+.feedback-container .feedback-field {
+    display: block;
+    position: relative;
+    margin-bottom: 8px;
+    color: #969696;
+}
+
+.feedback-container form {
+    padding: 14px;
+}
+
+.feedback-container .feedback-field input {
+    outline: 0;
+
+    box-shadow: 0 0 0 0 transparent;
+    border: 1px solid #e2e2e2;
+    padding: 8px 10px 8px 35px;
+    width: 100%;
+    height: 37px;
+    font-size: 15px;
+    line-height: 16px;
+    color: #3d3d3d;
+    border-radius: 3px;
+    transition: border .2s ease-in-out 0s,box-shadow .2s ease-in-out 0s;
+    resize: none;
+
+}
+
+.feedback-container .feedback-field span {
+    font-size: 26px;
+    left: 6px;
+    position: absolute;
+    text-align: center;
+    top: 11px;
+    width: 24px;
+    line-height: 16px;
+    color: #b2b2b2;
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+}
+
+
+.feedback-container .feedback-field textarea {
+    box-shadow: 0 0 0 0 transparent;
+    border: 1px solid #e2e2e2;
+    height: 94px;
+    width: 100%;
+    font-size: 15px;
+    color: #3d3d3d;
+    border-radius: 3px;
+    transition: border .2s ease-in-out 0s,box-shadow .2s ease-in-out 0s,height .2s ease-in-out 0s;
+    resize: none;
+    padding: 8px 10px;
+    line-height: 19px;
+    outline: 0;
+}
+
+.feedback-container .feedback-send {
+    text-align: center;
+}
+
+.feedback-container .feedback-send button {
+    padding: 3px 15px;
+    background-color: var(--e-global-link-background-color);
+    color: #ffffff;
+    border-width: 0px;
+    border-radius: 5px;
+}
+
+
+
+/* Close button */
+
+.feedback-container .feedback-close {
+    position: fixed;
+    top: 280px;
+    right: -230px;
+
+    transition: right .2s;
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+}
+
+.feedback-container .feedback-close:hover {
+    transform: scale(1.15);
+}
+
+.feedback-container .feedback-close.change {
+    right: 50px;
+}
+
+
+
+/* Feedback page (admin only) */
+
+.feedback {
+    overflow: auto;
+}
+
+.feedback table {
+    border: 1px #7A7A7A solid;
+}
+
+.feedback table tr.single-method a:hover {
+    text-decoration: none;
+    color:#54595F;
+}
+
+.feedback table thead {
+    vertical-align: middle;
+}
+
+.feedback table td {
+    vertical-align: middle;
+    border: 1px;
+    text-align: center;
+}
+
+.feedback table p {
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+.feedback table tr.single-method .cost-title p {
+    text-align: left !important;
+    font-size: var(--e-global-size-text) !important;
+    font-family: var(--e-global-family-text) !important;
+    color: var(--e-global-color-text) !important;
+}
+
+.feedback button {
+    border: none;
+    background-color: inherit;
+}

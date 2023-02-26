@@ -2,6 +2,8 @@
 {% load static %}
 
 {% block content %}
+<script src="{% static 'feedback/js/feedback.js' %}" type="text/javascript"></script>
+
 <div class="guide">
     <div class="container">
         <p>
@@ -17,7 +19,7 @@
         FeedBack
     </h2>
     {% if feedbacks %}
-    <div class="feedback" style="overflow: auto;">
+    <div class="feedback">
         <table class="table table-hover">
             <thead>
                 <tr>
@@ -56,7 +58,6 @@
                     <td>
                         <p>
                             <a href="" id="feedback_link_{{ feedback.id }}">
-                                <script src="{% static 'js/feedback.js' %}" type="text/javascript"></script>
                                 <script>get_feedback_link('{{ feedback.id }}', '{{ feedback.link }}')</script>
                             </a>
                         </p>
@@ -68,8 +69,8 @@
                         <p>
                             <form action="{% url 'feedback_delete_redirect_url' feedback.pk %}" method="post">
                                 {% csrf_token %}
-                                <button type='submit' style="border: none; background-color: inherit;">
-                                    <img src="{% static 'img/delete-btn.png' %}" alt="delete-btn.png" height="20px">
+                                <button type='submit'>
+                                    <img src="{% static 'feedback/img/delete-btn.png' %}" alt="delete-btn.png" height="20px">
                                 </button>
                             </form>
                         </p>

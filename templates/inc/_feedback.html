@@ -2,49 +2,72 @@
 
 <div class="feedback-container">
 
+    <!-- switcher -->
+    {% if request.path != '/feedback' %}
     <div class="feedback-switch" id="feedback-switch">
         <input type="checkbox" id="feedback-input" class="feedback-input" onclick="switch_feedback()">
         <label for="feedback-input">
-            <img src="{% static 'img/feedback.png' %}" alt="feedback.png" height="80px">
+            {% if not request.user.is_superuser %}
+            <div class="feedback-middle-btn">
+                <div class="message-icon"></div>
+                <span class="feedback-title">Оставить заявку</span>
+            </div>
+            {% else %}
+            <a href="{% url 'feedback_url' %}">
+                <div class="feedback-middle-btn">
+                    <div class="message-icon"></div>
+                    <span class="feedback-title">Оставить заявку</span>
+                </div>
+            </a>
+            {% endif %}
         </label>
     </div>
+    {% endif %}
 
+    <!-- form -->
     <div class="feedback-form" id="feedback-form">
+        <div class="feedback-header">
+            <div class="feedback-header-icon"></div>
+            <div class="feedback-title">Оставить заявку</div>
+        </div>
+        <div class="feedback-description">
+            Задайте Ваш вопрос здесь. Мы обязательно свяжемся с Вами!
+        </div>
         <form action="{% url 'feedback_redirect_url' %}" method="post">
             {% csrf_token %}
             
-            <div class="feeback-field">
-                <label for="feedback-form-name" class="">Имя</label>
-                <input type="text" name="name" id="feedback-form-name" class="form-control" required placeholder="Ваше имя">
-            </div>
-            
-            <div class="feeback-field">
-                <label for="feedback-form-contact" class="">Контакт</label>
-                <input type="text" name="contact" id="feedback-form-contact" class="form-control" required placeholder="Телефон или email">
-            </div>
+            <label class="feedback-field" for="feedback-form-name" class="">
+                <span class="material-symbols-outlined">person</span>
+                <input type="text" name="name" id="feedback-form-name" required placeholder="Ваше имя">
+            </label>
 
-            <div class="feeback-field">
-                <label for="feedback-form-text" class="">Сообщение</label>
-                <textarea name="text" id="feedback-form-text" cols="15" rows="4" class="form-control" style="resize: none" required placeholder="..."></textarea>
-            </div>
+            <label class="feedback-field" for="feedback-form-contact" class="">
+                <span class="material-symbols-outlined">manage_search</span>
+                <input type="text" name="contact" id="feedback-form-contact" required placeholder="Телефон или email">
+            </label>
             
-            <div class="feeback-field">
+            <label class="feedback-field" for="feedback-form-text" class="">
+                <textarea name="text" id="feedback-form-text" required placeholder="Cообщение..."></textarea>
+            </label>
+
+            <div class="feedback-field">
                 <input type="text" name="link" id="feedback-form-link" hidden value="{{ request.path }}">
             </div>
 
-            <div class="send" style="text-align: center;">
-                <button type="submit" style="margin-top: 15px; border-width: 1px; border-radius: 3px;">Отправить</button>
+            <div class="feedback-send">
+                <button type="submit">Отправить</button>
             </div>
         </form>
     </div>
 
+    <!-- cross -->
     <div class="feedback-close" id="feedback-close">
         <input type="checkbox" id="feedback-close-input" onclick="switch_feedback()">
         <label for="feedback-close-input">
-            <img src="{% static 'img/cross.png' %}" alt="cross.png" width="20px">
+            <img src="{% static 'feedback/img/cross.png' %}" alt="cross.png" width="20px">
         </label>
     </div>
 
 </div>
 
-<script src="{% static 'js/feedback.js' %}"></script>
+<script src="{% static 'feedback/js/feedback.js' %}"></script>

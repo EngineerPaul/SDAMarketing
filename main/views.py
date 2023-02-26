@@ -1,13 +1,12 @@
 import os
-from typing import List
 
 from django.views.generic import (
     TemplateView, ListView, RedirectView, DetailView
 )
-from django.shortcuts import render, redirect
-from django.urls import reverse_lazy
+from django.shortcuts import redirect
 from django.http import HttpResponseRedirect
-from django.views.generic.edit import FormMixin
+from django.core.mail import send_mail
+from django.conf import settings
 
 from rest_framework.generics import ListAPIView
 from rest_framework.permissions import AllowAny
@@ -151,18 +150,34 @@ class FeedBackFormView(RedirectView):
     def post(self, request, *args, **kwargs):
         form = self.form(request.POST)
         if form.is_valid():
-            return self.form_valid(request, form)
+            return self.form_valid(form)
         else:
             return self.get(request, *args, **kwargs)
 
-    def form_valid(self, request, form, *args, **kwargs):
+    def form_valid(self, form, *args, **kwargs):
         obj = self.model()
         obj.name = form.cleaned_data['name']
         obj.contact = form.cleaned_data['contact']
         obj.text = form.cleaned_data['text']
         obj.link = form.cleaned_data['link']
         obj.save()
-        return self.get(request)
+        # self.send(obj.name, obj.contact, obj.text, obj.link)
+        return HttpResponseRedirect(obj.link)
+
+    def send(self, name, contact, text, link):
+        message = str(
+            f'Имя пользователя: {name}\n'
+            f'Контакт: {contact}\n'
+            f'Ссылка: {self.request.get_host()}{link}'
+            f'Сообщение: {text}\n'
+        )
+        send_mail(
+            subject='Сообщение от пользователя с сайта',
+            message=message,
+            from_email=settings.EMAIL_HOST_USER,
+            recipient_list=[settings.EMAIL_RECEIVER_USER],
+            fail_silently=False
+        )
 
 
 # ADMIN ONLY
