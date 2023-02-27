@@ -81,6 +81,25 @@ function swith_query_param(param_name, id) {
 }
 
 
+// function that opens filters (checkboxes) when the window width is greater than 768px
+let open_filters = function() {
+    if (window.innerWidth > 768) {
+        let accord_btns = document.getElementsByClassName('accordion-button')
+        let accord = document.getElementsByClassName('accordion-collapse collapse')
+        
+        for (let i=0; i<accord_btns.length; i++) {
+            accord_btns[i].classList.toggle('collapsed')
+        }
+
+        for (let i=0; i<accord.length; i++) {
+            accord[i].classList.toggle('show')
+        }
+    }
+}
+
+open_filters()
+
+
 // COMMON VARIABLES AND FUNCTIONS FOR UPLOADING CONTENT
 
 let count = 0  // count of all upload projects, getting from page one (first request)

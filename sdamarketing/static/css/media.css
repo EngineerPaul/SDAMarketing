@@ -142,6 +142,11 @@
         margin-bottom: 30px;
     }
 
+    .projects .accordion .accordion-instries {
+        overflow-y: scroll;
+        height: 300px;
+    }
+
 }
 
 @media (max-width: 575px) {
