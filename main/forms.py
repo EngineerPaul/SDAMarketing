@@ -1,14 +1,15 @@
 from django import forms
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
-from .models import Cost, CostGroup, Vacancy, FeedBack
+from .models import Cost, CostGroup, Vacancy
 
 
-class FeedBackForm(forms.ModelForm):
-
-    class Meta:
-        model = FeedBack
-        fields = ('name', 'contact', 'text', 'link')
+class FeedBackForm(forms.Form):
+    name = forms.CharField(max_length=63, required=True)
+    contact = forms.CharField(max_length=63, required=True)
+    text = forms.CharField(required=True, widget=forms.Textarea())
+    link = forms.CharField(max_length=127, required=True,
+                           show_hidden_initial=True)
 
 
 # ADMIN FORMS

@@ -6,7 +6,9 @@ from .views import (
     ProjectDetail, SearchView, Vacancies_page, Contacts_page, Dictionary_page,
     Service_page_MSC, Service_page_CMR, Service_page_MMR,
     Service_page_MO, Service_page_WOEM, Service_page_BP,
-    FeedBackFormView, FeedBackAdminView, FeedBackAnsweredFormView,
+
+    # Forms
+    FeedBackFormView,
 
     # DRF
     ProjectListAPI,
@@ -43,13 +45,9 @@ urlpatterns = [
     path("services/biznes-plan-investicionnogo-proekta",
          Service_page_BP.as_view(), name='service_bp_url'),
 
-    # feedback
+    # forms
     path("feedback/redirect", FeedBackFormView.as_view(),
          name='feedback_redirect_url'),
-    path('feedback', FeedBackAdminView.as_view(), name='feedback_url'),
-    path('feedback/delete-redirect/<int:pk>',
-         FeedBackAnsweredFormView.as_view(),
-         name='feedback_delete_redirect_url'),
 
     # API
     path("api/project-list", ProjectListAPI.as_view(),

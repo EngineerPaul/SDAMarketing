@@ -3,26 +3,15 @@
 <div class="feedback-container">
 
     <!-- switcher -->
-    {% if request.path != '/feedback' %}
     <div class="feedback-switch" id="feedback-switch">
         <input type="checkbox" id="feedback-input" class="feedback-input" onclick="switch_feedback()">
         <label for="feedback-input">
-            {% if not request.user.is_superuser %}
             <div class="feedback-middle-btn">
                 <div class="message-icon"></div>
                 <span class="feedback-title">Оставить заявку</span>
             </div>
-            {% else %}
-            <a href="{% url 'feedback_url' %}">
-                <div class="feedback-middle-btn">
-                    <div class="message-icon"></div>
-                    <span class="feedback-title">Оставить заявку</span>
-                </div>
-            </a>
-            {% endif %}
         </label>
     </div>
-    {% endif %}
 
     <!-- form -->
     <div class="feedback-form" id="feedback-form">

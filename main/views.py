@@ -3,6 +3,7 @@ import os
 from django.views.generic import (
     TemplateView, ListView, RedirectView, DetailView
 )
+from django.views.generic.edit import FormMixin
 from django.shortcuts import redirect
 from django.http import HttpResponseRedirect
 from django.core.mail import send_mail
@@ -14,7 +15,7 @@ from rest_framework.pagination import PageNumberPagination
 
 from .models import (
     Cost, CostGroup, Project, Direction, Industry,
-    Vacancy, FeedBack, Slider
+    Vacancy, Slider
 )
 from .forms import FeedBackForm
 from .serializers import ProjectListSerializer
@@ -141,28 +142,26 @@ class Dictionary_page(TemplateView):
     template_name = os.path.join('main', 'dictionary.html')
 
 
-class FeedBackFormView(RedirectView):
+class FeedBackFormView(RedirectView, FormMixin):
     """ Form for feedback that opens using message icon """
 
-    model = FeedBack
-    form = FeedBackForm
+    form_class = FeedBackForm
 
     def post(self, request, *args, **kwargs):
-        form = self.form(request.POST)
+        form = self.get_form()
         if form.is_valid():
             return self.form_valid(form)
         else:
             return self.get(request, *args, **kwargs)
 
     def form_valid(self, form, *args, **kwargs):
-        obj = self.model()
-        obj.name = form.cleaned_data['name']
-        obj.contact = form.cleaned_data['contact']
-        obj.text = form.cleaned_data['text']
-        obj.link = form.cleaned_data['link']
-        obj.save()
-        # self.send(obj.name, obj.contact, obj.text, obj.link)
-        return HttpResponseRedirect(obj.link)
+        name = form.cleaned_data['name']
+        contact = form.cleaned_data['contact']
+        text = form.cleaned_data['text']
+        link = form.cleaned_data['link']
+        # print(name, contact, text, link)
+        # self.send(name, contact, text, link)
+        return HttpResponseRedirect(link)
 
     def send(self, name, contact, text, link):
         message = str(
@@ -189,37 +188,6 @@ class AdminAccessMixin:
         if not request.user.is_superuser:
             return redirect('homepage_url')
         return super().dispatch(request, *args, **kwargs)
-
-
-class FeedBackAdminView(AdminAccessMixin, ListView):
-    """ Page for viewing user messages by admin. To go, you must also click on
-    the message icon. Display only not answered message """
-
-    model = FeedBack
-    context_object_name = 'feedbacks'
-    template_name = os.path.join('main', 'admin', 'feedback.html')
-
-    def get_queryset(self):
-        queryset = super().get_queryset().filter(answered=False)
-        return queryset
-
-
-class FeedBackAnsweredFormView(RedirectView):
-    """ This view make the feedback answered and remove it from feedback page.
-    The class is called when admin clicks on the cross on the right side of
-    the feedback table. Messages are not removed from the db """
-
-    pattern_name = 'feedback_url'
-    model = FeedBack
-
-    def post(self, request, pk, *args, **kwargs):
-        self.answered(pk)
-        return self.get(request, *args, **kwargs)
-
-    def answered(self, pk):
-        obj = self.model.objects.get(pk=pk)
-        obj.answered = True
-        obj.save()
 
 
 # API

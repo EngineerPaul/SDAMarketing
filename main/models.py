@@ -165,48 +165,6 @@ class Cost(models.Model):
         verbose_name_plural = 'Цены'
 
 
-class FeedBack(models.Model):
-    """ Model for receiving messages from users """
-
-    name = models.CharField(
-        max_length=63,
-        verbose_name='Имя',
-        null=False,
-        blank=False,
-    )
-    contact = models.CharField(
-        max_length=63,
-        verbose_name='Контакт',
-        null=False,
-        blank=False
-    )
-    text = models.TextField(
-        verbose_name='Сообщение',
-        null=False,
-        blank=False
-    )
-    link = models.CharField(
-        max_length=127,
-        verbose_name='Ссылка',
-        null=False,
-    )
-    created_at = models.DateTimeField(
-        auto_now_add=True,
-        verbose_name='Дата создания'
-    )
-    answered = models.BooleanField(
-        default=False,
-        verbose_name='Просмотрено'
-    )
-
-    def __str__(self):
-        return self.contact
-
-    class Meta:
-        verbose_name = 'Feedback'
-        verbose_name_plural = 'Feedbacks'
-
-
 class Slider(models.Model):
     """ Model for posting ad """
 

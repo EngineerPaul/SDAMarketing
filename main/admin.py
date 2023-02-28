@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from .models import (
-    Cost, CostGroup, Project, Direction, Industry, Vacancy, FeedBack,
+    Cost, CostGroup, Project, Direction, Industry, Vacancy,
     Slider
 )
 from .forms import (
@@ -35,15 +35,6 @@ class VacancyAdmin(admin.ModelAdmin):
     list_display_links = ('title',)
 
 
-class FeedBackAdmin(admin.ModelAdmin):
-    list_display = ('name', 'contact', 'answered', )
-    list_display_links = ('name',)
-    ordering = ('answered', 'name')
-
-    def title(self, obj):
-        return obj.id
-
-
 class SliderAdmin(admin.ModelAdmin):
     list_display = ('title', )
     list_display_links = ('title', )
@@ -57,7 +48,5 @@ admin.site.register(Direction)
 admin.site.register(Industry)
 
 admin.site.register(Vacancy, VacancyAdmin)
-
-admin.site.register(FeedBack, FeedBackAdmin)
 
 admin.site.register(Slider, SliderAdmin)
