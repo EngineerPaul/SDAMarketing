@@ -108,7 +108,7 @@
                                             <label for="industry_id_{{industry.id}}" class="checkbox-other">
                                                 <input type="checkbox" name="" id="industry_id_{{industry.id}}"
                                                     onclick="swith_query_param('industry', '{{ industry.id }}')">
-                                                <span>{{ industry.title }}</span>
+                                                <span>{{ industry.title|lower|capfirst }}</span>
                                             </label>
                                         </div>
                                         {% endfor %}

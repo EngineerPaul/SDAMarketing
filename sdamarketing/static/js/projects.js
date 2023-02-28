@@ -125,11 +125,16 @@ let to_json = function(response) {
 let display_blocks = function(data) {
     for (i=0; i<data['results'].length; i++) {
         block.innerHTML = block.innerHTML + 
-        `<p>
-            <a href='${data['results'][i]['get_absolute_url']}'>
-            ${data['results'][i]['title']}
-            </a>
-        </p>`
+        `<div class="project">
+            <div class="content-direction">
+                ${data['results'][i]['direction'][0].toUpperCase() + data['results'][i]['direction'].slice(1).toLowerCase()}
+            </div>
+            <div class="content-title">
+                <a href='${data['results'][i]['get_absolute_url']}'>
+                <p>${data['results'][i]['title'][0].toUpperCase() + data['results'][i]['title'].slice(1).toLowerCase()}</p>
+                </a>
+            </div>
+        </div>`
         counter++
     }
     page++

@@ -4,7 +4,8 @@ from .models import Project
 
 
 class ProjectListSerializer(serializers.ModelSerializer):
+    direction = serializers.CharField(source='direction.title')
 
     class Meta:
         model = Project
-        fields = ('title', 'get_absolute_url')
+        fields = ('title', 'get_absolute_url', 'direction', )

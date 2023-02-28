@@ -172,7 +172,7 @@ class FeedBackFormView(RedirectView):
             f'Сообщение: {text}\n'
         )
         send_mail(
-            subject='Сообщение от пользователя с сайта',
+            subject='Запрос с сайта',
             message=message,
             from_email=settings.EMAIL_HOST_USER,
             recipient_list=[settings.EMAIL_RECEIVER_USER],

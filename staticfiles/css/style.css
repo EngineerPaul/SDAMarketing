@@ -445,20 +445,41 @@ span.phone-number {
     margin-bottom: 50px;
 }
 
-.projects .projects-content p,
-.search .projects-content p {
-    margin-bottom: 150px; /* temporarily */
+.projects .projects-content .project,
+.search .projects-content .project {
+    padding: 20px 10px 30px 10px;
+    border-radius: 7px;
 }
 
-.projects .projects-content p a,
-.search .projects-content p a {
+.projects .projects-content .project:nth-child(even) {
+    background-color: #f3f3f3;
+}
+
+.projects .projects-content .project .content-direction,
+.search .projects-content .project .content-direction {
+    font-size: 18px;
+    color: var(--e-global-link-color);
+    font-weight: 500;
+}
+
+.projects .projects-content .project .content-title a,
+.search .projects-content .project .content-title a {
+    display:inline;
+}
+
+.projects .projects-content .project .content-title a:hover,
+.search .projects-content .project .content-title a:hover {
+    text-decoration: none;
+}
+
+.projects .projects-content .project .content-title a p,
+.search .projects-content .project .content-title a p {
+    display: inline;
     color: #54595F;
     font-weight: 600;
-}
-
-.projects .projects-content p a:hover,
-.search .projects-content p a:hover {
-    color: var(--e-global-link-color);
+    font-size: 18px;
+    margin-bottom: 0;
+    text-align: left;
 }
 
 .projects .col-4.filter {
@@ -556,7 +577,7 @@ span.phone-number {
     display: inline-block;
     position: relative;
     padding: 0 0 0 35px;
-    line-height: 22px;   
+    line-height: 22px;
 }
 .checkbox-other span:before {
     content: "";

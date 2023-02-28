@@ -106,8 +106,8 @@ class Project(models.Model):  # is Project model
         return reverse('project_detail_url', kwargs={'slug': self.slug})
 
     class Meta:
-        verbose_name = 'Статья'
-        verbose_name_plural = 'Статьи'
+        verbose_name = 'Проект'
+        verbose_name_plural = 'Проекты'
         ordering = ('-created_at', )
 
 
