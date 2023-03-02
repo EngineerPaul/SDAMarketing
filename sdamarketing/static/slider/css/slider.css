@@ -24,6 +24,12 @@
     display:table-cell;
 }
 
+.slider .master-slider .ms-nav-next, 
+.slider .master-slider .ms-nav-prev {
+    z-index: 10;
+}
+
+
 @media (max-width: 450px) {
     .slider .slider-content {
         font-size: 1rem;

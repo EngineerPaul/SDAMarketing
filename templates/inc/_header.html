@@ -20,6 +20,18 @@
             </div>
 
             <div class="col ms-auto">
+                <div class="search-menu">
+                    <form action="{% url 'project_search_url' %}" method="get">
+                        {% csrf_token %}
+                        <label class="search-input-form" for="search-input">
+                            <input  type="text" name="search" id="search-input" placeholder="Найти...">
+                            <button type="submit">
+                                <span class="material-symbols-outlined">search</span>
+                            </button>
+                        </label>
+                    </form>
+                </div>
+                
                 <nav class="nav-menu">
                     <input type="checkbox" name="toggle" id="menu" class="toggleMenu">
                     <label for="menu" class="toggleMenu">

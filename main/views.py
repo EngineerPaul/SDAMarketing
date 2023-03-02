@@ -19,6 +19,7 @@ from .models import (
 )
 from .forms import FeedBackForm
 from .serializers import ProjectListSerializer
+from .services import search
 
 
 class Homepage(TemplateView):
@@ -108,19 +109,16 @@ class ProjectDetail(DetailView):
     context_object_name = 'project'
 
 
-class SearchView(ListView):
-    model = Project
-    context_object_name = 'search_list'
-    template_name = os.path.join('main', 'search.html')
+class SearchView(TemplateView):
+    """ Search page in website content """
 
-    def get_queryset(self):
-        return self.model.objects.filter(
-            title__icontains=self.request.GET.get('search').upper()
-        )
+    template_name = os.path.join('main', 'search.html')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['search'] = self.request.GET.get('search')
+        word = self.request.GET.get('search')
+        context['search_list'] = search(word)
         return context
 
 

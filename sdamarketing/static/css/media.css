@@ -6,6 +6,9 @@
         visibility: hidden;
         opacity: 0;
     }
+    .nav-menu label {
+        margin-top: 7px;
+    }
 
     .nav-menu {
         position: relative;
