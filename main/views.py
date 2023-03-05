@@ -157,15 +157,14 @@ class FeedBackFormView(RedirectView, FormMixin):
         contact = form.cleaned_data['contact']
         text = form.cleaned_data['text']
         link = form.cleaned_data['link']
-        # print(name, contact, text, link)
-        # self.send(name, contact, text, link)
+        self.send(name, contact, text, link)
         return HttpResponseRedirect(link)
 
     def send(self, name, contact, text, link):
         message = str(
             f'Имя пользователя: {name}\n'
             f'Контакт: {contact}\n'
-            f'Ссылка: {self.request.get_host()}{link}'
+            f'Ссылка: {self.request.get_host()}{link}\n'
             f'Сообщение: {text}\n'
         )
         send_mail(
