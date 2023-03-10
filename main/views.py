@@ -1,15 +1,16 @@
 import os
 
 from django.views.generic import (
-    TemplateView, ListView, RedirectView, DetailView
+    TemplateView, ListView, DetailView
 )
-from django.views.generic.edit import FormMixin
 from django.shortcuts import redirect
-from django.http import HttpResponseRedirect
 from django.core.mail import send_mail
 from django.conf import settings
 
+from rest_framework import status
 from rest_framework.generics import ListAPIView
+from rest_framework.views import APIView
+from rest_framework.response import Response
 from rest_framework.permissions import AllowAny
 from rest_framework.pagination import PageNumberPagination
 
@@ -17,8 +18,7 @@ from .models import (
     Cost, CostGroup, Project, Direction, Industry,
     Vacancy, Slider
 )
-from .forms import FeedBackForm
-from .serializers import ProjectListSerializer
+from .serializers import ProjectListSerializer, FeedbackFormSerializer
 from .services import search
 
 
@@ -140,42 +140,6 @@ class Dictionary_page(TemplateView):
     template_name = os.path.join('main', 'dictionary.html')
 
 
-class FeedBackFormView(RedirectView, FormMixin):
-    """ Form for feedback that opens using message icon """
-
-    form_class = FeedBackForm
-
-    def post(self, request, *args, **kwargs):
-        form = self.get_form()
-        if form.is_valid():
-            return self.form_valid(form)
-        else:
-            return self.get(request, *args, **kwargs)
-
-    def form_valid(self, form, *args, **kwargs):
-        name = form.cleaned_data['name']
-        contact = form.cleaned_data['contact']
-        text = form.cleaned_data['text']
-        link = form.cleaned_data['link']
-        self.send(name, contact, text, link)
-        return HttpResponseRedirect(link)
-
-    def send(self, name, contact, text, link):
-        message = str(
-            f'Имя пользователя: {name}\n'
-            f'Контакт: {contact}\n'
-            f'Ссылка: {self.request.get_host()}{link}\n'
-            f'Сообщение: {text}\n'
-        )
-        send_mail(
-            subject='Запрос с сайта',
-            message=message,
-            from_email=settings.EMAIL_HOST_USER,
-            recipient_list=[settings.EMAIL_RECEIVER_USER],
-            fail_silently=False
-        )
-
-
 # ADMIN ONLY
 
 class AdminAccessMixin:
@@ -219,3 +183,38 @@ class ProjectListAPI(ListAPIView):
                 industry__pk__in=industries
             )
         return queryset
+
+
+class SendFeedBackAPI(APIView):
+    """ View get feedback with js (feedback.js) and send message to email """
+
+    serializer_class = FeedbackFormSerializer
+    permission_classes = [AllowAny]
+
+    def post(self, request, *args, **kwargs):
+        serializer = self.serializer_class(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.send(
+            name=serializer.data['name'],
+            contact=serializer.data['contact'],
+            text=serializer.data['text'],
+            link=serializer.data['link'],
+        )
+        return Response(
+            status=status.HTTP_200_OK
+        )
+
+    def send(self, name, contact, text, link):
+        message = str(
+            f'Имя пользователя: {name}\n'
+            f'Контакт: {contact}\n'
+            f'Ссылка: {self.request.get_host()}{link}\n'
+            f'Сообщение: {text}\n'
+        )
+        send_mail(
+            subject='Запрос с сайта',
+            message=message,
+            from_email=settings.EMAIL_HOST_USER,
+            recipient_list=[settings.EMAIL_RECEIVER_USER],
+            fail_silently=False
+        )

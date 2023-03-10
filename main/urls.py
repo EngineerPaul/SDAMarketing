@@ -7,11 +7,8 @@ from .views import (
     Service_page_MSC, Service_page_CMR, Service_page_MMR,
     Service_page_MO, Service_page_WOEM, Service_page_BP,
 
-    # Forms
-    FeedBackFormView,
-
     # DRF
-    ProjectListAPI,
+    ProjectListAPI, SendFeedBackAPI,
 )
 
 urlpatterns = [
@@ -45,11 +42,9 @@ urlpatterns = [
     path("services/biznes-plan-investicionnogo-proekta",
          Service_page_BP.as_view(), name='service_bp_url'),
 
-    # forms
-    path("feedback/redirect", FeedBackFormView.as_view(),
-         name='feedback_redirect_url'),
-
     # API
     path("api/project-list", ProjectListAPI.as_view(),
          name='project_list_api_url'),
+    path("api/send-feedback", SendFeedBackAPI.as_view(),
+         name='send_feedback_api'),
 ]

@@ -22,7 +22,8 @@
         <div class="feedback-description">
             Задайте Ваш вопрос здесь. Мы обязательно свяжемся с Вами!
         </div>
-        <form action="{% url 'feedback_redirect_url' %}" method="post">
+
+        <form id="fb_form">
             {% csrf_token %}
             
             <label class="feedback-field" for="feedback-form-name" class="">
@@ -40,11 +41,11 @@
             </label>
 
             <div class="feedback-field">
-                <input type="text" name="link" id="feedback-form-link" hidden value="{{ request.path }}">
+                <input type="text" name="link" id="feedback-form-link" hidden value="{{ request.get_full_path }}">
             </div>
 
             <div class="feedback-send">
-                <button type="submit">Отправить</button>
+                <button type="button" onclick="send_mail()">Отправить</button>
             </div>
         </form>
     </div>
@@ -58,5 +59,9 @@
     </div>
 
 </div>
+
+<script>
+    let send_feedback_url = "{% url 'send_feedback_api' %}"
+</script>
 
 <script src="{% static 'feedback/js/feedback.js' %}"></script>

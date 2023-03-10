@@ -29,13 +29,14 @@ class SearchServicesPage():
         return False
 
 
-templates_path = ('main', 'templates', 'main')
+# ('main', 'templates', 'main') doesn't work on servers
+templates_path = (os.path.dirname(__file__), 'templates', 'main')
 services_urls = [
     SearchServicesPage(
         filepath=os.path.join(*templates_path, 'services', 'bp.html'),
         # filepath='main/templates/main/services/bp.html',
-        title=str('Разработка бизнес-плана и финансовой модели инвестиционного '
-                  'проекта'),
+        title=str('Разработка бизнес-плана и финансовой модели инвестиционного'
+                  ' проекта'),
         url_name='service_bp_url'
     ),
     SearchServicesPage(

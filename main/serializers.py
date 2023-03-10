@@ -9,3 +9,10 @@ class ProjectListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
         fields = ('title', 'get_absolute_url', 'direction', )
+
+
+class FeedbackFormSerializer(serializers.Serializer):
+    name = serializers.CharField()
+    contact = serializers.CharField()
+    text = serializers.CharField()
+    link = serializers.CharField()
