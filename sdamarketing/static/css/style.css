@@ -662,6 +662,17 @@ span.phone-number {
 
 .contacts .map {
     width:100%;
-    max-width: 800px;
     height:300px;
+}
+
+.contacts p.address {
+    margin-top: 15px;
+}
+
+.contacts .phones {
+    margin-bottom: 15px;
+}
+
+.contacts p.phone {
+    margin-bottom: 5px;
 }
