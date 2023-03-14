@@ -169,3 +169,10 @@ class Slider(models.Model):
     """ Model for posting ad """
 
     title = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Объявление'
+        verbose_name_plural = 'Объявления'
