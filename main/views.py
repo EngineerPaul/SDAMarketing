@@ -80,11 +80,21 @@ class Prices_page(ListView):
     template_name = os.path.join('main', 'prices.html')
 
     def get_queryset(self):
-        """ Function return dict of cost groups (CostGroup model) and costs
-        (Cost model) """
-        queryset = self.model.objects.all().prefetch_related('cost')
-        queryset = {group: group.cost.all() for group in queryset}
-        return queryset
+        """ Function return two dicts of cost groups (CostGroup model)
+        and costs (Cost model):
+        - dict of all services without 'another services'
+        - dict of 'another services' """
+        initial_queryset = self.model.objects.all().prefetch_related('cost')
+
+        services, another_services = dict(), dict()
+        for group in initial_queryset:
+            if str(group) != "<p>Другие услуги</p>":
+                services[group] = group.cost.all()
+            else:
+                another_services['title'] = group
+                another_services['costs'] = group.cost.all()
+
+        return {'services': services, 'another_services': another_services}
 
 
 class ProjectsPageView(TemplateView):

@@ -128,6 +128,7 @@ class CostGroup(models.Model):
     class Meta:
         verbose_name = 'Группа цен'
         verbose_name_plural = 'Группы цен'
+        ordering = ('-id',)
 
 
 class Cost(models.Model):
@@ -163,6 +164,7 @@ class Cost(models.Model):
     class Meta:
         verbose_name = 'Цена'
         verbose_name_plural = 'Цены'
+        ordering = ('-id',)
 
 
 class Slider(models.Model):
