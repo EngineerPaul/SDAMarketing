@@ -119,7 +119,7 @@ class CostGroup(models.Model):
         verbose_name='Название группы',
         null=False,
         blank=False,
-        unique=True
+        # unique=True
     )
 
     def __str__(self):

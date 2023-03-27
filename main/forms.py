@@ -10,17 +10,18 @@ class CostForm(forms.ModelForm):
     title = forms.CharField(
         widget=CKEditorUploadingWidget(),
         label='Название услуги',
-        max_length=255,
+        max_length=350,
     )
     cost = forms.CharField(
         widget=CKEditorUploadingWidget(),
         label='Стоимость',
-        max_length=63,
+        max_length=200,
     )
     term = forms.CharField(
         widget=CKEditorUploadingWidget(),
         label='Срок',
-        max_length=31,
+        max_length=200,
+        required=False,
     )
 
     class Meta:
