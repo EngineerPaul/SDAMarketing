@@ -130,19 +130,21 @@ let display_blocks = function(data) {
                 ${data['results'][i]['direction'][0].toUpperCase() + data['results'][i]['direction'].slice(1).toLowerCase()}
             </div>
             <div class="content-title">
-                <a href='${data['results'][i]['get_absolute_url']}'>
-                <p>${data['results'][i]['title'][0].toUpperCase() + data['results'][i]['title'].slice(1).toLowerCase()}</p>
+                <a href='${data['results'][i]['get_absolute_url']}' onclick="loader_on()">
+                    <p>${data['results'][i]['title'][0].toUpperCase() + data['results'][i]['title'].slice(1).toLowerCase()}</p>
                 </a>
             </div>
         </div>`
         counter++
     }
     page++
+    loader_off()
     setTimeout(() => is_perfoming = false, 500)
 }
 
 let raise_error = function (error) {
     console.log('error', error)
+    loader_off()
 }
 
 let get_url = function(url, param_dict) {
@@ -173,6 +175,7 @@ function get_href(pathname, param_dict) {
 let query_params = Object.assign({'page': [page]}, get_query_params())
 url = get_url(projects_api_url, query_params)
 
+loader_on()
 fetch(url)
 .then(check_status)
 .then (to_json)

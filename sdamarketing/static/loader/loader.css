@@ -1,0 +1,31 @@
+:root {
+    --e-global-size-loader: 250px;
+}
+
+.loader {
+    position: fixed;
+    top: calc(50vh - var(--e-global-size-loader)/2);
+    right: calc(50vw - var(--e-global-size-loader)/2);
+    z-index: 5000;
+}
+
+.loader-none {
+    display: none;
+}
+
+.loader img {
+    max-width: var(--e-global-size-loader);
+    max-height: var(--e-global-size-loader);
+}
+
+@media (max-width: 768px) {
+    :root {
+        --e-global-size-loader: 200px;
+    }
+}
+
+@media (max-width: 450px) {
+    :root {
+        --e-global-size-loader: 150px;
+    }
+}

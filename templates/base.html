@@ -17,11 +17,13 @@
     <link rel="stylesheet" href="{% static 'css/footer.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'css/media.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'feedback/css/feedback.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'loader/loader.css' %}" type="text/css">
     <link rel="shortcut icon" href="{% static 'img/logo.jpg' %}" type="image/png">
     <title>Маркетинговое агентство SDA</title>
 </head>
 
 <body>
+    {% include 'inc/_loader.html' %}
 
     {% block header %}
     {% include 'inc/_header.html' %}
@@ -44,6 +46,7 @@
         crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+    <script type="text/javascript" src="{% static 'loader/finite_loader.js' %}"></script>
 </body>
 
 </html>
