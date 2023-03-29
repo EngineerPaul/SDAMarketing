@@ -6,6 +6,7 @@ from django.views.generic import (
 from django.shortcuts import redirect
 from django.core.mail import send_mail
 from django.conf import settings
+from django.db.models import Q
 
 from rest_framework import status
 from rest_framework.generics import ListAPIView
@@ -166,9 +167,9 @@ class AdminAccessMixin:
 class ProjectPaginationAPI(PageNumberPagination):
     """ Pagination of projects by request pages """
 
-    page_size = 6
+    page_size = 15
     page_size_query_param = 'page_size'
-    max_page_size = 10
+    max_page_size = 30
 
 
 class ProjectListAPI(ListAPIView):
@@ -190,7 +191,7 @@ class ProjectListAPI(ListAPIView):
             )
         if industries:
             queryset = queryset.filter(
-                industry__pk__in=industries
+                Q(industry__pk__in=industries) | Q(industry__title="Все отрасли")
             )
         return queryset
 

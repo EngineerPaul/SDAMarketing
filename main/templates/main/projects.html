@@ -90,13 +90,15 @@
                                 <div class="accordion-body">
                                     <div class="accordion-instries">
                                         {% for industry in industries %}
+                                        {% if industry.title != 'Все отрасли' %}
                                         <div class="industry_checkbox">
                                             <label for="industry_id_{{industry.id}}" class="checkbox-other">
                                                 <input type="checkbox" name="" id="industry_id_{{industry.id}}"
                                                     onclick="swith_query_param('industry', '{{ industry.id }}')">
-                                                <span>{{ industry.title|lower|capfirst }}</span>
+                                                <span>{{ industry.title|capfirst }}</span>
                                             </label>
                                         </div>
+                                        {% endif %}
                                         {% endfor %}
                                     </div>
                                 </div>

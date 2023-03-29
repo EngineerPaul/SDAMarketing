@@ -190,7 +190,7 @@ window.addEventListener("scroll", function() {
     let contentHeight = block.offsetHeight;
     let yOffset       = window.pageYOffset;
     let window_height = window.innerHeight;
-    let y             = yOffset + window_height;
+    let y             = yOffset + 2*window_height;
 
     // if the user has reached the of the page
     if (y >= contentHeight) {
