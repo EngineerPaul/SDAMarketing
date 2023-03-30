@@ -127,11 +127,11 @@ let display_blocks = function(data) {
         block.innerHTML = block.innerHTML + 
         `<div class="project">
             <div class="content-direction">
-                ${data['results'][i]['direction'][0].toUpperCase() + data['results'][i]['direction'].slice(1).toLowerCase()}
+                ${data['results'][i]['direction']}
             </div>
             <div class="content-title">
                 <a href='${data['results'][i]['get_absolute_url']}' onclick="loader_on()">
-                    <p>${data['results'][i]['title'][0].toUpperCase() + data['results'][i]['title'].slice(1).toLowerCase()}</p>
+                    <p>${data['results'][i]['title']}</p>
                 </a>
             </div>
         </div>`

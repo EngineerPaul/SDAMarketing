@@ -612,6 +612,11 @@ span.phone-number {
     margin-right: 30px;
 }
 
+.project-detail .project-detail-content h3 {
+    color: #54595F;
+    margin-bottom: 24px;
+}
+
 .project-detail .project-detail-content img {
     max-width: 100%;
     height: auto !important;
