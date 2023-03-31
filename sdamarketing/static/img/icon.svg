@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<svg width="150" height="62" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->
+
+ <g class="layer">
+  <title>Layer 1</title>
+  <rect fill="#f3f3f3" height="62" id="svg_3" stroke="#000000" stroke-width="0" width="150"/>
+  <text fill="#dc5130" font-family="Arial" font-size="29" font-weight="bold" id="svg_1" stroke="#000000" stroke-width="0" text-anchor="middle" transform="matrix(1.4682 0 0 1.4682 -7.41088 -5.30876)" x="56.082709" xml:space="preserve" y="37.281187">SDA</text>
+  <text fill="#dc5130" font-family="Arial" font-size="17" id="svg_4" stroke="#000000" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" text-anchor="middle" x="20.502081" xml:space="preserve" y="12.080553"/>
+  <text fill="#dc5130" font-family="Arial" font-size="0.001" id="svg_5" stroke="#000000" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" text-anchor="middle" x="16.302081" xml:space="preserve" y="9.280553">Маркетинговое агентство</text>
+  <text fill="#7a7a7a" font-family="Arial" font-size="8" id="svg_6" stroke="#000000" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" text-anchor="middle" x="75.000007" xml:space="preserve" y="11.080553">Маркетинговое агентство</text>
+ </g>
+</svg>
