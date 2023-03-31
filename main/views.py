@@ -193,7 +193,7 @@ class ProjectListAPI(ListAPIView):
             queryset = queryset.filter(
                 Q(industry__pk__in=industries) | Q(industry__title="Все отрасли")
             )
-        return queryset
+        return queryset.select_related('direction')
 
 
 class SendFeedBackAPI(APIView):
