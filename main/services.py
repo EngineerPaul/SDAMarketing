@@ -7,6 +7,7 @@ from .models import Project, Cost
 
 
 class SearchServicesPage():
+    """ Class for searching in html files """
 
     def __init__(self, filepath, title, url_name):
         self.filepath = filepath
@@ -29,6 +30,7 @@ class SearchServicesPage():
         return False
 
 
+# services_urls is a list of html files to search
 # ('main', 'templates', 'main') doesn't work on servers
 templates_path = (os.path.dirname(__file__), 'templates', 'main')
 services_urls = [
@@ -83,6 +85,8 @@ services_urls = [
 
 
 def search(word, files=services_urls):
+    """ Keyword search in selected content """
+
     word = word.lower()
     out = []
     for search_class in files:

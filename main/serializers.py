@@ -4,6 +4,8 @@ from .models import Project
 
 
 class ProjectListSerializer(serializers.ModelSerializer):
+    """ Serializer for listing projects """
+
     direction = serializers.CharField(source='direction.title')
 
     class Meta:
@@ -12,6 +14,8 @@ class ProjectListSerializer(serializers.ModelSerializer):
 
 
 class FeedbackFormSerializer(serializers.Serializer):
+    """ Serializer for sending message to email """
+
     name = serializers.CharField()
     contact = serializers.CharField()
     text = serializers.CharField()

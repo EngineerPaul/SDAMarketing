@@ -7,6 +7,8 @@ from .models import Cost, CostGroup, Vacancy
 # ADMIN FORMS
 
 class CostForm(forms.ModelForm):
+    """ Used in admin """
+    
     title = forms.CharField(
         widget=CKEditorUploadingWidget(),
         label='Название услуги',
@@ -30,6 +32,8 @@ class CostForm(forms.ModelForm):
 
 
 class CostGroupForm(forms.ModelForm):
+    """ Used in admin """
+    
     title = forms.CharField(
         widget=CKEditorUploadingWidget(),
         label='Название группы цен',
@@ -42,6 +46,8 @@ class CostGroupForm(forms.ModelForm):
 
 
 class ProjectForm(forms.ModelForm):
+    """ Used in admin """
+    
     content = forms.CharField(
         widget=CKEditorUploadingWidget(),
         label='Содержание',
@@ -49,6 +55,8 @@ class ProjectForm(forms.ModelForm):
 
 
 class VacancyForm(forms.ModelForm):
+    """ Used in admin """
+
     description = forms.CharField(widget=CKEditorUploadingWidget())
 
     class Meta:

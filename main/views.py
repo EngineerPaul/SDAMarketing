@@ -128,8 +128,8 @@ class SearchView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['search'] = self.request.GET.get('search')
-        word = self.request.GET.get('search')
-        context['search_list'] = search(word)
+        keyword = self.request.GET.get('search')
+        context['search_list'] = search(keyword)
         return context
 
 

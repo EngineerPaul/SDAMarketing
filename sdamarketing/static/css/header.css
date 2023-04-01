@@ -100,7 +100,7 @@
     padding: 0;
     border: none;
     outline: none;
-    background-color: #ffffff;
+    background-color: inherit;
     width: 24px;
     height: 24px;
     color: #666666;

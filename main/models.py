@@ -63,7 +63,7 @@ class Industry(models.Model):
         ordering = ('title', )
 
 
-class Project(models.Model):  # is Project model
+class Project(models.Model):
     """ Model for list of projects and projects """
 
     direction = models.ForeignKey(
