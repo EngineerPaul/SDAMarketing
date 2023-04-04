@@ -6,6 +6,9 @@ from django.db.models import Q
 from .models import Project, Cost
 
 
+# SEARCH
+###############################################################################
+
 class SearchServicesPage():
     """ Class for searching in html files """
 
@@ -120,3 +123,24 @@ def search(word, files=services_urls):
             })
             break
     return out
+
+
+# SITE CONTENT
+###############################################################################
+
+def convert_query_to_dict(queryset):
+    dictionary = dict()
+    for var in queryset:
+        dictionary[var.name] = var
+    return dictionary
+
+
+common_site_content = [
+    'title',
+    'header_logo', 'header_about_us', 'header_services', 'header_prices',
+    'header_projects', 'header_vacancies', 'header_contacts',
+    'header_dictionary', 'header_phone_1', 'header_phone_2', 'header_mail',
+    'footer',
+    'feadback_button_title', 'feadback_title', 'feadback_content',
+    'path_main',
+]

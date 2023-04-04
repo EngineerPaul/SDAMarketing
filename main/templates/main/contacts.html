@@ -5,46 +5,22 @@
 <div class="guide">
     <div class="container">
         <p>
-            <a href="{% url 'homepage_url' %}">Главная</a>
+            <a href="{% url 'homepage_url' %}">{{ content.path_main.value }}</a>
              >> 
-            Контакты
+             {{ content.contacts_title.value }}
         </p>
     </div>
     <hr>
 </div>
 <div class="container">
     <h2>
-        Контакты
+        {{ content.contacts_title.value }}
     </h2>
     <div class="contacts">
         <div class="map" id="mapexMap">
             <!-- Здесь располагается карта javascript -->
         </div>
-        <p class="address">
-            <strong>Адрес:</strong> г. Санкт-Петербург, пр. Старо-Петергофский 44
-        </p>
-        <div class="phones">
-            <div class="row">
-                <div class="col1">
-                    <p>
-                        <strong>Телефоны:</strong>
-                    </p>
-                </div>
-                <div class="col2">
-                    <p class="phone">
-                        <a class="non-click" href="tel:+78122094537">+7 (812) 209-45-37</a>
-                    </p>
-                    <p class="phone">
-                        <a class="non-click" href="tel:+79119254537">+7 (911) 925-45-37</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-        
-        <p>
-            <strong>E-mail:</strong>
-            <a class="non-click" href="mailto:sda@sdamarketing.ru">sda@sdamarketing.ru </a>
-        </p>
+        {{ content.contacts_content.content|safe }}
     </div>
 </div>
 

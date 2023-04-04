@@ -7,35 +7,16 @@
     {% include carousel_path %}
     {% endif %}
     <div class="welcome-page">
-        <p>
-            <strong>Приветствуем Вас на сайте Маркетингового агентства SDA!</strong>
-        </p>
-        <p>
-            Мы предлагаем маркетинговое сопровождение для развития бизнеса.
-        </p>
-        <p>
-            Агентство SDA проводит все виды маркетинговых, социологических и политических исследований, оказывает услуги по разработке бизнес-планов и финансовых моделей, стратегическому консалтингу, аутсорсингу маркетинга.
-        </p>
-        <p>
-            Компания была образована в 2015 году. С момента образования мы провели более 100 проектов в интересах российских и международных компаний. За годы работы мы создали собственные методики оценки рынков.
-        </p>
-        <p>
-            <strong>Более 80%</strong> наших клиентов становятся постоянными партнерами.
-        </p>
-        <p>
-            Чтобы заказать маркетинговое исследование или бизнес-план не обязательно знать профессиональные термины и заполнять брифы.&nbsp; Достаточно направить запрос на электронную почту sda@sdamarketing.ru, сотрудники SDA подберут оптимальную методику и составят план проекта.
-        </p>
+        {{ content.homepage_content.content|safe }}
         <div class="express-exploer-object">
             <div class="row">
                 <div class="col" style="min-width: 300px;">
-                    <p>
-                        Для случаев, когда информация «нужна еще вчера», мы предлагаем экспресс-исследование рынка.
-                    </p>
+                    {{ content.homepage_left_text.content|safe }}
                 </div>
                 <div class="col" style="min-width: 300px;">
                     <div class="express-exploer-button">
                         <a class="btn" href="/projects/ekspress-issledovanie-rynka">
-                            Экспресс-исследование рынка
+                            {{ content.homepage_btn_text.value }}
                         </a>
                     </div>
                 </div>
@@ -51,11 +32,11 @@
                         <div class="card-body">
                             <h5 class="card-title">
                                 <a href="{% url 'service_cmr_url' %}" class="card-link-one">
-                                    Классические маркетинговые исследования
+                                    {{ content.homepage_col1_title.value }}
                                 </a>
                             </h5>
                             <p class="card-text">
-                                Фокус-группы, кабинетные исследования, опросы, тайный покупатель
+                                {{ content.homepage_col1_content.value }}
                             </p>
                         </div>
                     </div>
@@ -68,11 +49,11 @@
                         <div class="card-body">
                             <h5 class="card-title">
                                 <a href="{% url 'service_mmr_url' %}" class="card-link-two">
-                                    Современные маркетинговые исследования
+                                    {{ content.homepage_col2_title.value }}
                                 </a>
                             </h5>
                             <p class="card-text">
-                                Customer development, conjoint-анализ, foresight-сессии, UX-тестирование, клиентские исследования
+                                {{ content.homepage_col2_content.value }}
                             </p>
                         </div>
                     </div>
@@ -85,11 +66,11 @@
                         <div class="card-body">
                             <h5 class="card-title">
                                 <a href="{% url 'service_bp_url' %}" class="card-link-three">
-                                    Разработка бизнес-планов и финансовых моделей для кредитования
+                                    {{ content.homepage_col3_title.value }}
                                 </a>
                             </h5>
                             <p class="card-text">
-                                Помощь в создании инвестиционных проектов и получении финансирования в банках и государственных структурах
+                                {{ content.homepage_col3_content.value }}
                             </p>
                         </div>
                     </div>
@@ -102,11 +83,11 @@
                         <div class="card-body">
                             <h5 class="card-title">
                                 <a href="{% url 'service_msc_url' %}" class="card-link-four">
-                                    Управленческий и стратегический консалтинг для развития компании
+                                    {{ content.homepage_col4_title.value }}
                                 </a>
                             </h5>
                             <p class="card-text">
-                                Разработка стратегии компании, проведение семинаров и воркшопов, оценка лояльности сотрудников
+                                {{ content.homepage_col4_content.value }}
                             </p>
                         </div>
                     </div>

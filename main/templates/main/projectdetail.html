@@ -5,9 +5,9 @@
 <div class="guide">
     <div class="container">
         <p>
-            <a href="{% url 'homepage_url' %}">Главная</a>
+            <a href="{% url 'homepage_url' %}">{{ content.path_main.value }}</a>
              >> 
-            <a href="{% url 'projects_url' %}">Проекты</a>
+            <a href="{% url 'projects_url' %}">{{ content.projects_title.value }}</a>
              >> 
             {{ project.title|lower|capfirst }}
         </p>
@@ -18,13 +18,13 @@
     <div class="project-detail">
         <div class="project-detail-description">
             <h5>
-                <strong>Название проекта:</strong> {{ project.title|capfirst }}
+                <strong>{{ content.projectdetail_title.value }}</strong> {{ project.title|capfirst }}
             </h5>
             <h6>
-                <strong>Тип материала:</strong> {{ project.direction }}
+                <strong>{{ content.projectdetail_diretion.value }}</strong> {{ project.direction }}
             </h6>
             <h6>
-                <strong>Отрасль:</strong> {% for industry in project.industry.all %} {{ industry }}{% if not forloop.last %}, {% endif %} {% endfor %}
+                <strong>{{ content.projectdetail_industry.value }}</strong> {% for industry in project.industry.all %} {{ industry }}{% if not forloop.last %}, {% endif %} {% endfor %}
             </h6>
         </div>
         <div class="project-detail-content">

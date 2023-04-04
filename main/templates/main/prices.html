@@ -5,27 +5,19 @@
 <div class="guide">
     <div class="container">
         <p>
-            <a href="{% url 'homepage_url' %}">Главная</a>
+            <a href="{% url 'homepage_url' %}">{{ content.path_main.value }}</a>
              >> 
-            Цены
+             {{ content.prices_title.value }}
         </p>
     </div>
     <hr>
 </div>
 <div class="container">
     <h2>
-        Цены
+        {{ content.prices_title.value }}
     </h2>
     <div class="prices">
-        <p>
-            Цена маркетингового исследования зависит от многих факторов: методов 
-            получения данных, доступности источников информации, объема выборки, 
-            сложности и размера анкеты и др.
-        </p>
-        <p>
-            Ниже приведены базовые цены и сроки выполнения работ специалистами 
-            маркетингового агентства SDA. 
-        </p>
+        {{ content.prices_content.content|safe }}
 
         <table class="table table-hover">
             <thead>
@@ -99,11 +91,7 @@
 
             </tbody>
         </table>
-        <p>
-            Уточняйте стоимость в маркетинговом агентстве SDA по телефону 
-            <span class="phone-number">+7&nbsp;(812)&nbsp;209-45-37</span> 
-            или через запрос на электронную почту sda@sdamarketing.ru
-        </p>
+        {{ content.prices_footer.content|safe }}
     </div>
 </div>
 {% endblock content %}

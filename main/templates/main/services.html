@@ -5,9 +5,9 @@
 <div class="guide">
     <div class="container">
         <p>
-            <a href="{% url 'homepage_url' %}">Главная</a>
+            <a href="{% url 'homepage_url' %}">{{ content.path_main.value }}</a>
              >> 
-            Услуги
+            {{ content.services_title.value }}
         </p>
     </div>
     <hr>
@@ -15,21 +15,9 @@
 <div class="container">
     <div class="services">
         <h2>
-            Услуги
+            {{ content.services_title.value }}
         </h2>
-        <p>
-            В своей работе мы используем весь спектр маркетинговых методов. 
-            Специалисты маркетигового агенства SDA обладают большим опытом в 
-            организации и проведении количественных, качественных и кабинетных 
-            исследований. Мы всегда знаем, какой комплекс маркетинговых методов 
-            наилучшим образом подходит для  заказчика. Каждый наш проект индивидуален 
-            и уникален. 
-        </p>
-        <p>
-            Помимо маркетинговых исследований, у нас можно заказать услуги 
-            копирайтинга, обучающие семинары по внутреннему и внешнему маркетингу. 
-        </p>
-    
+        {{ content.services_content.content|safe }}
         <div class="details">
             <div class="row">
                 <div class="col">
@@ -41,7 +29,7 @@
                             <div class="col">
                                 <div class="card-body">
                                 <p class="card-text">
-                                    Управленческий и стратегический консалтинг
+                                    {{ content.services_link1.value }}
                                 </p>
                                 <a href="{% url 'service_msc_url' %}">Подробнее</a>
                                 </div>
@@ -58,7 +46,7 @@
                             <div class="col">
                                 <div class="card-body">
                                 <p class="card-text">
-                                    Классические маркетинговые исследования
+                                    {{ content.services_link2.value }}
                                 </p>
                                 <a href="{% url 'service_cmr_url' %}">Подробнее</a>
                                 </div>
@@ -77,7 +65,7 @@
                             <div class="col">
                                 <div class="card-body">
                                 <p class="card-text">
-                                    Современные маркетинговые исследования
+                                    {{ content.services_link3.value }}
                                 </p>
                                 <a href="{% url 'service_mmr_url' %}">Подробнее</a>
                                 </div>
@@ -94,7 +82,7 @@
                             <div class="col">
                                 <div class="card-body">
                                 <p class="card-text">
-                                    Аутсорсинг маркетинга
+                                    {{ content.services_link4.value }}
                                 </p>
                                 <a href="{% url 'service_mo_url' %}">Подробнее</a>
                                 </div>
@@ -113,7 +101,7 @@
                             <div class="col">
                                 <div class="card-body">
                                 <p class="card-text">
-                                    Оптимизация сайтов и email-рассылка
+                                    {{ content.services_link5.value }}
                                 </p>
                                 <a href="{% url 'service_woem_url' %}">Подробнее</a>
                                 </div>
@@ -130,7 +118,7 @@
                             <div class="col">
                                 <div class="card-body">
                                 <p class="card-text">
-                                    Бизнес-планы
+                                    {{ content.services_link6.value }}
                                 </p>
                                 <a href="{% url 'service_bp_url' %}">Подробнее</a>
                                 </div>
@@ -140,71 +128,6 @@
                 </div>
             </div>
         </div>
-        
-        
-        
-        
-        
-        
-        <!-- <div class="row row-cols-md-2 justify-content-center">
-            <div class="card mb-3">
-                <div class="row">
-                    <div class="col-5">
-                        <img src="{% static 'img/homepage-score.jpg' %}" class="img-fluid rounded-start" alt="homepage-score.jpg">
-                    </div>
-                    <div class="col">
-                        <div class="card-body">
-                        <p class="card-text">
-                            Управленческий и стратегический консалтинг
-                        </p>
-                        <a href="#">Подробнее</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card mb-3" style="max-width: 540px;">
-                <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="..." class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                </div>
-                </div>
-            </div>
-            <div class="card mb-3" style="max-width: 540px;">
-                <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="..." class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                </div>
-                </div>
-            </div>
-            <div class="card mb-3" style="max-width: 540px;">
-                <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="..." class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div> -->
     </div>
 </div>
 {% endblock content %}

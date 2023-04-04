@@ -178,3 +178,42 @@ class Slider(models.Model):
     class Meta:
         verbose_name = 'Объявление'
         verbose_name_plural = 'Объявления'
+
+
+class SiteContent(models.Model):
+    """ All site content is contained in variables """
+
+    alias = models.CharField(
+        verbose_name='Псевдоним',
+        max_length=100,
+        null=False,
+        blank=False,
+        unique=True
+    )  # for customer
+    name = models.CharField(
+        verbose_name='Переменная',
+        max_length=50,
+        null=False,
+        blank=False,
+        unique=True
+    )  # variable name
+    content = models.TextField(
+        verbose_name='Содержимое',
+        null=True,
+        blank=True,
+    )  # displayed content
+    value = models.CharField(
+        verbose_name='Значение (для формул)',
+        max_length=200,
+        null=True,
+        blank=True,
+        unique=False
+    )  # value for function (option)
+
+    def __str__(self):
+        return self.alias
+
+    class Meta:
+        verbose_name = 'Контент сайта'
+        verbose_name_plural = 'Контент сайта'
+        ordering = ('alias',)

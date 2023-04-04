@@ -1,14 +1,14 @@
 from django import forms
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
-from .models import Cost, CostGroup, Vacancy
+from .models import Cost, CostGroup, Vacancy, SiteContent
 
 
 # ADMIN FORMS
 
 class CostForm(forms.ModelForm):
     """ Used in admin """
-    
+
     title = forms.CharField(
         widget=CKEditorUploadingWidget(),
         label='Название услуги',
@@ -33,7 +33,7 @@ class CostForm(forms.ModelForm):
 
 class CostGroupForm(forms.ModelForm):
     """ Used in admin """
-    
+
     title = forms.CharField(
         widget=CKEditorUploadingWidget(),
         label='Название группы цен',
@@ -47,7 +47,7 @@ class CostGroupForm(forms.ModelForm):
 
 class ProjectForm(forms.ModelForm):
     """ Used in admin """
-    
+
     content = forms.CharField(
         widget=CKEditorUploadingWidget(),
         label='Содержание',
@@ -61,4 +61,18 @@ class VacancyForm(forms.ModelForm):
 
     class Meta:
         model = Vacancy
+        fields = '__all__'
+
+
+class ContentAdminForm(forms.ModelForm):
+    """ Used in admin """
+
+    content = forms.CharField(
+        widget=CKEditorUploadingWidget(),
+        label='Содержимое',
+        required=False
+    )
+
+    class Meta:
+        model = SiteContent
         fields = '__all__'

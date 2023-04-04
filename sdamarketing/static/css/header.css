@@ -56,14 +56,25 @@
     height: 100%;
 }
 
-.header .col2 a {
+.header .col2 a,
+.header .col2 a p {
     color: #dc5130;
     text-decoration: none;
     outline: none;
     line-height: calc(87.5px / 3);
 }
 
-.header .col2 a:hover {
+.header .col2 a p {
+    margin-bottom: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: calc(87.5px / 3);
+    width: auto;
+    display: inline;
+}
+
+.header .col2 a:hover,
+.header .col2 a p:hover {
     text-decoration: underline;
     color: gray;
 }

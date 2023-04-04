@@ -5,16 +5,16 @@
 <div class="guide">
     <div class="container">
         <p>
-            <a href="{% url 'homepage_url' %}">Главная</a>
+            <a href="{% url 'homepage_url' %}">{{ content.path_main.value }}</a>
              >> 
-            Вакансии
+            {{ content.vacancies_title.value }}
         </p>
     </div>
     <hr>
 </div>
 <div class="container">
     <h2>
-        Вакансии
+        {{ content.vacancies_title.value }}
     </h2>
     
     <div class="vacancies">
@@ -32,11 +32,7 @@
         {% endif %}
         {% endfor %}
 
-        <p class="vacancies-summary">
-            <strong>
-                Резюме присылайте на u.ivanova@sdamarketing.ru
-            </strong>
-        </p>
+        {{ content.vacancies_footer.content|safe }}
     </div>
 
 </div>

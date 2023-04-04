@@ -2,10 +2,10 @@ from django.contrib import admin
 
 from .models import (
     Cost, CostGroup, Project, Direction, Industry, Vacancy,
-    Slider
+    Slider, SiteContent
 )
 from .forms import (
-    VacancyForm, CostForm, CostGroupForm, ProjectForm
+    VacancyForm, CostForm, CostGroupForm, ProjectForm, ContentAdminForm
 )
 
 
@@ -40,6 +40,12 @@ class SliderAdmin(admin.ModelAdmin):
     list_display_links = ('title', )
 
 
+class SiteContentAdmin(admin.ModelAdmin):
+    form = ContentAdminForm
+    list_display = ('alias', 'name',)
+    list_display_links = ('alias',)
+
+
 admin.site.register(Cost, CostAdmin)
 admin.site.register(CostGroup, CostGroupAdmin)
 
@@ -50,3 +56,5 @@ admin.site.register(Industry)
 admin.site.register(Vacancy, VacancyAdmin)
 
 admin.site.register(Slider, SliderAdmin)
+
+admin.site.register(SiteContent, SiteContentAdmin)
