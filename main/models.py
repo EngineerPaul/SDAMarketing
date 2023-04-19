@@ -209,9 +209,19 @@ class SiteContent(models.Model):
         blank=True,
         unique=False
     )  # value for function (option)
+    url_name = models.CharField(
+        verbose_name='Имя url-адреса',
+        max_length=50,
+        null=True,
+        blank=True,
+        unique=False
+    )  # for link in admin (get_absolute_url method)
 
     def __str__(self):
         return self.alias
+
+    def get_absolute_url(self):
+        return reverse(self.url_name)
 
     class Meta:
         verbose_name = 'Контент сайта'

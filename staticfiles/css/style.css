@@ -7,7 +7,7 @@ body {
     --e-global-size-text: 14px;
     --e-global-color-text: #7A7A7A;
     --e-global-family-text: "Roboto", sans-serif;
-    --e-global-link-background-color: #B54B3A;
+    --e-global-link-background-color: #B8372C;  /* #B54B3A */
     --e-global-link-color: #DC5130;
 }
 
@@ -108,7 +108,6 @@ span.phone-number {
     font-weight: 500;
     color: #fff;
     background-color: var(--e-global-link-background-color);
-    border-color: #dc3545;
     border-radius: 5px;
 }
 
@@ -435,8 +434,8 @@ span.phone-number {
     font-weight: 500;
     color: #fff;
     background-color: var(--e-global-link-background-color);
-    border-color: #dc3545;
     border-radius: 5px;
+    text-decoration: none;
 }
 
 .projects .search .row {
@@ -498,7 +497,6 @@ span.phone-number {
 
 .projects .accordion h2.accordion-header button.accordion-button {
     box-shadow: none;
-    border-color: gray;
 }
 
 .projects .accordion h2.accordion-header button.accordion-button h3 {
@@ -638,6 +636,7 @@ span.phone-number {
     text-align: justify;
 }
 
+/* удалить */
 .project-detail .project-detail-content .project-list-btn a.btn {
     margin: 10px 0;
     padding: 16px 24px;
@@ -645,8 +644,31 @@ span.phone-number {
     font-weight: 500;
     color: #fff;
     background-color: var(--e-global-link-background-color);
-    border-color: #dc3545;
     border-radius: 5px;
+}
+
+.project-detail .project-detail-content .row {
+    margin-bottom: 16px;
+}
+
+.project-detail .project-detail-content .row .col1 {
+    width: 65%;
+}
+
+.project-detail .project-detail-content .row .col2 {
+    width: 35%;
+    text-align: center;
+}
+
+.project-detail .project-detail-content .row a.btn {
+    margin: 10px 0;
+    padding: 16px 24px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.3em;
+    color: #fff;
+    background-color: var(--e-global-link-background-color);
+    text-decoration: none;
 }
 
 .project-detail .project-detail-content .overflow-table {

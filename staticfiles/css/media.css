@@ -150,6 +150,28 @@
         height: 300px;
     }
 
+    .project-detail .project-detail-content .txt-btn a.btn {
+        display: none;
+    }
+
+    .project-detail .project-detail-content a.btn.after {
+        display: block;
+    }
+
+    
+    .project-detail .project-detail-content .row .col1 {
+        width: 100%;
+    }
+
+    .project-detail .project-detail-content .row .col2 {
+        text-align: center;
+        width: 100%;
+    }
+
+    .project-detail .project-detail-content .row .col2 a {
+        margin: 0px;
+    }
+
 }
 
 @media (max-width: 575px) {
@@ -188,6 +210,7 @@
 
 
 @media (min-width: 1200px) {
+    .header .container,
     .site-content .container {
         max-width: 1140px;
     }

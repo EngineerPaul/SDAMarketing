@@ -75,4 +75,5 @@ class ContentAdminForm(forms.ModelForm):
 
     class Meta:
         model = SiteContent
-        fields = '__all__'
+        # fields = '__all__'
+        exclude = ['url_name']
