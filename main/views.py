@@ -1,5 +1,6 @@
 import os
 from datetime import date
+import random
 
 from django.views.generic import (
     TemplateView, ListView, DetailView
@@ -30,7 +31,8 @@ class Homepage(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['carousel_path'] = os.path.join('main', 'inc', '_carousel.html')
-        context['slider'] = Slider.objects.all()
+        context['slider'] = list(Slider.objects.all())
+        random.shuffle(context['slider'])
         page_content = [
             'homepage_content', 'homepage_left_text', 'homepage_btn_text',
             'homepage_col1_title', 'homepage_col1_content',

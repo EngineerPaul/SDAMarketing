@@ -1,0 +1,24 @@
+/* Slider of homepage */
+
+.slider {
+    padding-top: 5px;
+}
+
+.slider .slider-content {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+    cursor: grab;
+    min-height: 100px;
+    color: var(--e-global-color-text);
+    font-weight: 500;
+    font-size: 2.5rem;
+}
+
+@media (max-width: 450px) {
+    .slider .slider-content {
+        font-size: 1.8rem;
+    }
+}

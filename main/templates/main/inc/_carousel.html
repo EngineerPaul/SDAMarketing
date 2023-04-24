@@ -1,38 +1,36 @@
 {% load static %}
 
-<link rel="stylesheet" id='msl-main-css' type='text/css' media='all'
-        href="{% static 'slider/css/masterslider.main.css' %}">
-<script type='text/javascript' id='jquery-core-js' src="{% static 'slider/js/jquery.js' %}"></script>
-<link rel="stylesheet" id='msl-main-css' type='text/css' media='all' href="{% static 'slider/css/slider.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'slick/slick.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'slick/slick-theme.css' %}"/>
+<link rel="stylesheet" id='msl-main-css' type='text/css' media='all' href="{% static 'slick/slider.css' %}">
 
+
+<!-- http://kenwheeler.github.io/slick/ -->
 <div class="slider">
-    <!-- MasterSlider -->
-    <div id="P_MS63f870388a304" class="master-slider-parent msl ms-parent-id-3" style="max-width:100%;">
-        <!-- MasterSlider Main -->
-        <div id="MS63f870388a304" class="master-slider ms-skin-default">
-
-            {% for slide in slider %}
-            <div class="ms-slide" data-delay="3" data-fill-mode="fill">
-                <div class="slider-title">
-                    <div class="slider-content">
-                        {{ slide.title }}
-                    </div>
-                </div>
-
-                <div class="ms-thumb">
-                    <div class="ms-tab-context">
-                        <div class=&quot;ms-tab-context&quot;></div>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-
-        </div>
-        <!-- END MasterSlider Main -->
+  <div class="autoplay">
+    {% for slide in slider %}
+    <div class="slider-content">
+        {{ slide.title }}
     </div>
-    <!-- END MasterSlider -->
+    {% endfor %}
+  </div>
 </div>
 
-<script type='text/javascript' src="{% static 'slider/js/use-strict.js' %}"></script>
-<script type='text/javascript' id='jquery-easing-js' src="{% static 'slider/js/jquery.easing.min.js' %}"></script>
-<script type='text/javascript' id='jquery-easing-js' src="{% static 'slider/js/masterslider.min.js' %}"></script>
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="{% static 'slick/slick.min.js' %}"></script>
+
+<script>
+// http://kenwheeler.github.io/slick/
+$('.autoplay').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 10_000,
+  arrows: false,
+  speed: 1500,
+  pauseOnFocus: false,
+  pauseOnHover: true,
+});
+</script>
