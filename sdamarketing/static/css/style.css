@@ -700,29 +700,13 @@ span.phone-number {
     padding-top: 25px;
 }
 
-.vacancies .vacancy {
-    margin-bottom: 50px;
-}
-
-.vacancies .vacancy p.title {
-    text-align: left;
-    font-size: 18px;
-    text-decoration: underline;
-    color: #54595F;
-    font-family: "Roboto", sans-serif;
-}
-
-.vacancies .vacancy .vacancy-description {
-    padding-left: 5%;
-}
-
-.vacancies .vacancy ul {
+.vacancies ul {
     color: var(--e-global-color-text);
     font-size: var(--e-global-size-text);
     font-family: var(--e-global-family-text);
 }
 
-.vacancies .vacancy a {
+.vacancies a.btn {
     text-align: center;
     display: inline-block;
     padding: 8px 10px;
@@ -730,10 +714,6 @@ span.phone-number {
     color: #fff;
     font-size: var(--e-global-size-text);
     border-radius: .35rem;
-}
-
-.vacancies p.vacancies-summary-link {
-    text-align: left;
 }
 
 

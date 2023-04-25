@@ -307,17 +307,18 @@ class SearchView(TemplateView):
         return context
 
 
-class Vacancies_page(ListView):
+# class Vacancies_page(ListView):
+class Vacancies_page(TemplateView):
     """ Page of vacancies """
 
-    model = Vacancy
+    # model = Vacancy
     context_object_name = 'vacancies'
     template_name = os.path.join('main', 'vacancies.html')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         page_content = [
-            'vacancies_title', 'vacancies_footer'
+            'vacancies_title', 'vacancies_content'
         ]
         site_content = common_site_content + page_content
         site_content = SiteContent.objects.filter(name__in=site_content)

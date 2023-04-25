@@ -19,20 +19,8 @@
     
     <div class="vacancies">
 
-        {% for vacancy in vacancies %}
-        {% if vacancy.active %}
-        <div class="vacancy">
-            <p class="title">
-                <strong>{{ vacancy.title|upper }}</strong>
-            </p>
-            <div class="vacancy-description">
-                {{ vacancy.description|safe }}
-            </div>
-        </div>
-        {% endif %}
-        {% endfor %}
+        {{ content.vacancies_content.content|safe }}
 
-        {{ content.vacancies_footer.content|safe }}
     </div>
 
 </div>
