@@ -80,6 +80,13 @@
                                 aria-labelledby="panelsStayOpen-headingTwo">
                                 <div class="accordion-body">
                                     <div class="accordion-instries">
+                                        <div class="industry_checkbox">
+                                            <label for="all_industies_id" class="checkbox-other">
+                                                <input type="checkbox" name="" id="all_industies_id"
+                                                    onclick="clear_industries_param()">
+                                                <span>Все отрасли</span>
+                                            </label>
+                                        </div>
                                         {% for industry in industries %}
                                         {% if industry.title != 'Все отрасли' %}
                                         <div class="industry_checkbox">
