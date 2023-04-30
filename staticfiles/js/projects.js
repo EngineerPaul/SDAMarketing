@@ -46,6 +46,12 @@ let activate_checkboxes = function() {
             }
         }
     }
+
+    // all_industries element check
+    if (!(all_parameters['industry'])) {
+        all_industries_element = document.getElementById('all_industies_id')
+        all_industries_element.checked = true
+    }
 }
 
 activate_checkboxes()
@@ -78,6 +84,32 @@ function swith_query_param(param_name, id) {
         link = link
     }
     window.location.href = link
+}
+
+
+// function to clear the address bar
+function clear_industries_param() {
+    let industries = get_query_params()['industry']
+    if (industries) {
+        let all_parameters = get_query_params()
+        delete all_parameters['industry']
+
+        let link = window.location.pathname
+        query_str = get_query_str(all_parameters)
+        if (query_str) {
+            link = link + '?' + get_query_str(all_parameters)
+        } else {
+            link = link
+        }
+        window.location.href = link
+    }
+
+    // all_industries element check
+    let all_parameters = get_query_params()
+    if (!(all_parameters['industry'])) {
+        all_industries_element = document.getElementById('all_industies_id')
+        all_industries_element.checked = true
+    }
 }
 
 

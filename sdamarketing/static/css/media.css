@@ -1,3 +1,19 @@
+@media (min-width: 1200px) {
+    /* index columns */
+    .welcome-page .homepage-products .row .col-one {
+        width: 249px;
+    }
+    .welcome-page .homepage-products .row .col-two {
+        width: 280px;
+    }
+    .welcome-page .homepage-products .row .col-three {
+        width: 291px;
+    }
+    .welcome-page .homepage-products .row .col-four {
+        width: 296px;
+    }
+}
+
 @media (max-width: 1199px) {
 
     /* horizontal menu invisible */
@@ -83,9 +99,42 @@
         background-color:rgb(194, 192, 192);
     }
 
+    /* index columns */
+    .welcome-page .homepage-products .row .col-one {
+        flex: 0 0 auto;
+        width: 224px;
+    }
+    .welcome-page .homepage-products .row .col-three {
+        flex: 0 0 auto;
+        width: 244px;
+    }
+    .welcome-page .homepage-products .row .card-title {
+        height: 97px;
+    }
+    .welcome-page .homepage-products .row .col-one img {
+        padding: 10px 6px;
+    }
+
 }
 
 @media (max-width: 992px) {
+    /* index columns */
+    .welcome-page .homepage-products .row .col {
+        width: 25%;
+    }
+    .welcome-page .homepage-products .row .card-title {
+        height: 108px;
+    }
+    .welcome-page .homepage-products .row .col-one img {
+        padding: 10px;
+    }
+    .welcome-page .homepage-products .row .col.col-four .card-body {
+        padding: 10px 0px;
+    }
+    .welcome-page .homepage-products .row .col .card-title a {
+        font-size: 18px;
+    }
+
     .projects > .introduction > .row > .col-8 {
         width: auto;
         margin-left: auto;
@@ -101,6 +150,10 @@
 
 @media (max-width: 768px) {
 
+    .welcome-page .homepage-products .row .card-title {
+        height: auto;
+    }
+
     .welcome-page .homepage-products .row {
         display: flex;
         align-items: center;
@@ -108,15 +161,18 @@
     }
 
     .welcome-page .homepage-products .row .col {
+        flex: auto;
         padding: 0px 6px;
         max-width: 450px;
         margin-left: auto;
         margin-right: auto;
+        width: auto;
     }
 
     .welcome-page .homepage-products .row .col .card {
         margin-bottom: 10px;
     }
+
 
     .btn-slider {
         right: calc(25px - 50%);

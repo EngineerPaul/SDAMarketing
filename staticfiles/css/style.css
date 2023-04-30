@@ -134,6 +134,7 @@ span.phone-number {
     position: static;
     text-align: center;
     overflow: hidden;
+    border: none;
 }
 
 .welcome-page .homepage-products .card img {
@@ -147,7 +148,9 @@ span.phone-number {
 }
 
 .welcome-page .homepage-products .card .card-title {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .welcome-page .homepage-products .card .card-title a {
