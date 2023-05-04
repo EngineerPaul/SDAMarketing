@@ -3,7 +3,7 @@ import os
 from django.shortcuts import resolve_url
 from django.db.models import Q
 
-from .models import Project, Cost
+from .models import Project, Cost, SiteContent
 
 
 # SEARCH
@@ -98,6 +98,8 @@ def search(word, files=services_urls):
                 'title': search_class.title,
                 'url': search_class.get_url()
             })
+
+    # search in the Project model
     projects = Project.objects.filter(
         Q(title__icontains=word) | Q(title__icontains=word.capitalize()) |
         Q(title__icontains=word.upper()) |
@@ -107,14 +109,16 @@ def search(word, files=services_urls):
     if projects:
         for project in projects:
             out.append({
-                'title': project.title.lower().capitalize(),
+                'title': project.title,
                 'url': project.get_absolute_url()
             })
+
+    # search in the Cost model
     costs = Cost.objects.filter(
         Q(title__icontains=word) |
         Q(title__icontains=word.capitalize()) |
         Q(title__icontains=word.upper())
-    )
+    ).distinct()
     if costs:
         for cost in costs:
             out.append({
@@ -122,6 +126,22 @@ def search(word, files=services_urls):
                 'url': resolve_url('prices_url')
             })
             break
+
+    # search in the SiteContent model
+    site_contents = SiteContent.objects.filter(
+        Q(content__icontains=word) | Q(content__icontains=word.capitalize()) |
+        Q(content__icontains=word.upper()) |
+        Q(value__icontains=word) | Q(value__icontains=word.capitalize()) |
+        Q(value__icontains=word.upper())
+    ).distinct()
+    if site_contents:
+        for site_content in site_contents:
+            if site_content.search_page:
+                out.append({
+                    'title': site_content.search_page,
+                    'url': site_content.get_absolute_url()
+                })
+
     return out
 
 

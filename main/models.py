@@ -170,7 +170,7 @@ class Cost(models.Model):
 class Slider(models.Model):
     """ Model for posting ad """
 
-    title = models.CharField(max_length=30)
+    title = models.CharField(max_length=50)
 
     def __str__(self):
         return self.title
@@ -216,6 +216,13 @@ class SiteContent(models.Model):
         blank=True,
         unique=False
     )  # for link in admin (get_absolute_url method)
+    search_page = models.CharField(
+        verbose_name='Имя для поиска',
+        max_length=150,
+        null=True,
+        blank=True,
+        unique=False
+    )  # title for link in the search page
 
     def __str__(self):
         return self.alias
