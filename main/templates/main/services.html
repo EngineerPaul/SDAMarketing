@@ -5,9 +5,9 @@
 <div class="guide">
     <div class="container">
         <p>
-            <a href="{% url 'homepage_url' %}">{{ content.path_main.value }}</a>
+            <a href="{% url 'homepage_url' %}">Главная</a>
              >> 
-            {{ content.services_title.value }}
+             Услуги
         </p>
     </div>
     <hr>
@@ -15,9 +15,21 @@
 <div class="container">
     <div class="services">
         <h2>
-            {{ content.services_title.value }}
+            Услуги
         </h2>
-        {{ content.services_content.content|safe }}
+        <p>
+            В своей работе мы используем весь спектр маркетинговых методов. 
+            Специалисты маркетигового агенства SDA обладают большим опытом в 
+            организации и проведении количественных, качественных и кабинетных 
+            исследований. Мы всегда знаем, какой комплекс маркетинговых методов 
+            наилучшим образом подходит для  заказчика. Каждый наш проект индивидуален 
+            и уникален. 
+        </p>
+        <p>
+            Помимо маркетинговых исследований, у нас можно заказать услуги 
+            копирайтинга, обучающие семинары по внутреннему и внешнему маркетингу. 
+        </p>
+
         <div class="details">
             <div class="row">
                 <div class="col">
@@ -29,7 +41,7 @@
                             <div class="col">
                                 <div class="card-body">
                                 <p class="card-text">
-                                    {{ content.services_link1.value }}
+                                    Управленческий и стратегический консалтинг
                                 </p>
                                 <a href="{% url 'service_msc_url' %}">Подробнее</a>
                                 </div>
@@ -46,7 +58,7 @@
                             <div class="col">
                                 <div class="card-body">
                                 <p class="card-text">
-                                    {{ content.services_link2.value }}
+                                    Классические маркетинговые исследования
                                 </p>
                                 <a href="{% url 'service_cmr_url' %}">Подробнее</a>
                                 </div>
@@ -65,7 +77,7 @@
                             <div class="col">
                                 <div class="card-body">
                                 <p class="card-text">
-                                    {{ content.services_link3.value }}
+                                    Современные маркетинговые исследования
                                 </p>
                                 <a href="{% url 'service_mmr_url' %}">Подробнее</a>
                                 </div>
@@ -82,7 +94,7 @@
                             <div class="col">
                                 <div class="card-body">
                                 <p class="card-text">
-                                    {{ content.services_link4.value }}
+                                    Аутсорсинг маркетинга
                                 </p>
                                 <a href="{% url 'service_mo_url' %}">Подробнее</a>
                                 </div>
@@ -101,7 +113,7 @@
                             <div class="col">
                                 <div class="card-body">
                                 <p class="card-text">
-                                    {{ content.services_link5.value }}
+                                    Оптимизация сайтов и email-рассылка
                                 </p>
                                 <a href="{% url 'service_woem_url' %}">Подробнее</a>
                                 </div>
@@ -118,7 +130,7 @@
                             <div class="col">
                                 <div class="card-body">
                                 <p class="card-text">
-                                    {{ content.services_link6.value }}
+                                    Бизнес-планы
                                 </p>
                                 <a href="{% url 'service_bp_url' %}">Подробнее</a>
                                 </div>

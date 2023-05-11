@@ -5,16 +5,16 @@
 <div class="guide">
     <div class="container">
         <p>
-            <a href="{% url 'homepage_url' %}">{{ content.path_main.value }}</a>
+            <a href="{% url 'homepage_url' %}">Главная</a>
              >> 
-             {{ content.search_by_word.value }}
+             Поиск по слову "{{ search }}"
         </p>
     </div>
     <hr>
 </div>
 <div class="container">
     <h2>
-        {{ content.search_title.value }}
+        Поиск
     </h2>
     <div class="search">
         <div class="articles-content">
@@ -27,7 +27,7 @@
                 </div>
                 {% endfor %}
             {% else %}
-                <p>{{ content.search_nothing.value }}</p>
+                <p>К сожалению, по запросу "{{ search }}" ничего не найдено...</p>
             {% endif %}
         </div>
     </div>

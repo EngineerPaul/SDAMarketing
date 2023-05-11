@@ -1,7 +1,7 @@
 from django import forms
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
-from .models import Cost, CostGroup, Vacancy, SiteContent
+from .models import Cost, CostGroup, Vacancy
 
 
 # ADMIN FORMS
@@ -62,18 +62,3 @@ class VacancyForm(forms.ModelForm):
     class Meta:
         model = Vacancy
         fields = '__all__'
-
-
-class ContentAdminForm(forms.ModelForm):
-    """ Used in admin """
-
-    content = forms.CharField(
-        widget=CKEditorUploadingWidget(),
-        label='Содержимое',
-        required=False
-    )
-
-    class Meta:
-        model = SiteContent
-        # fields = '__all__'
-        exclude = ['url_name']
