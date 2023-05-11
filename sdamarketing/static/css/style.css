@@ -710,6 +710,7 @@ span.phone-number {
 }
 
 .vacancies a.btn {
+    text-decoration: none;
     text-align: center;
     display: inline-block;
     padding: 8px 10px;

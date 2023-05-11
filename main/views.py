@@ -136,11 +136,10 @@ class SearchView(TemplateView):
         return context
 
 
-# class Vacancies_page(ListView):
-class Vacancies_page(TemplateView):
+class Vacancies_page(ListView):
     """ Page of vacancies """
 
-    # model = Vacancy
+    model = Vacancy
     context_object_name = 'vacancies'
     template_name = os.path.join('main', 'vacancies.html')
 
