@@ -215,10 +215,10 @@ class SendFeedBackAPI(APIView):
             f'Ссылка: {self.request.get_host()}{link}\n'
             f'Сообщение: {text}\n'
         )
-        send_mail(
-            subject='Запрос с сайта',
-            message=message,
-            from_email=settings.EMAIL_HOST_USER,
-            recipient_list=[settings.EMAIL_RECEIVER_USER],
-            fail_silently=False
-        )
+        # send_mail(
+        #     subject='Запрос с сайта',
+        #     message=message,
+        #     from_email=settings.EMAIL_HOST_USER,
+        #     recipient_list=[settings.EMAIL_RECEIVER_USER],
+        #     fail_silently=False
+        # )

@@ -30,7 +30,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['6nc555fz.pythonanywhere.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -83,27 +83,27 @@ WSGI_APPLICATION = "sdamarketing.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": BASE_DIR / "db.sqlite3",
-#     }
-# }
-
-# https://dev.mysql.com/doc/connector-python/en/connector-python-django-backend.html
 DATABASES = {
-    'default': {
-        'ENGINE': 'mysql.connector.django',
-        'NAME': env('DATABASE_NAME'),
-        'USER': env('DATABASE_USER'),
-        'PASSWORD': env('DATABASE_PASS'),
-        'HOST': env('DATABASE_HOST'),
-        'PORT': 3306,
-        'OPTIONS': {
-            'sql_mode': 'STRICT_TRANS_TABLES',
-        },
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+
+# https://dev.mysql.com/doc/connector-python/en/connector-python-django-backend.html
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'mysql.connector.django',
+#         'NAME': env('DATABASE_NAME'),
+#         'USER': env('DATABASE_USER'),
+#         'PASSWORD': env('DATABASE_PASS'),
+#         'HOST': env('DATABASE_HOST'),
+#         'PORT': 3306,
+#         'OPTIONS': {
+#             'sql_mode': 'STRICT_TRANS_TABLES',
+#         },
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators

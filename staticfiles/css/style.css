@@ -29,6 +29,13 @@ a:hover {
     text-decoration: underline;
 }
 
+a.disabled-link {
+    pointer-events: none;
+    cursor: text;
+    color: var(--e-global-color-text);
+    text-decoration: none;
+}
+
 .site-content {
     padding-top: calc(97.5px);
     margin-bottom: 50px;
