@@ -1,0 +1,80 @@
+name: CI/CD
+
+on:
+  push:
+    branches: ["master"]
+  pull_request:
+    branches: ["master"]
+  workflow_dispatch:
+
+concurrency:
+  group: ci-cd-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    name: CI
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Upgrade pip
+        run: python -m pip install --upgrade pip
+
+      - name: Syntax check (compileall)
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m compileall -q .
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Django check
+        env:
+          SECRET_KEY: ci-not-a-secret
+          URL_PREFIX: extra/marketing/
+          EMAIL_HOST: localhost
+          EMAIL_HOST_USER: ci
+          EMAIL_HOST_PASSWORD: ci
+          EMAIL_PORT: "465"
+          EMAIL_RECEIVER_USER: ci@example.com
+        run: python manage.py check
+
+      - name: Validate docker compose
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p sdamarketing
+          : > sdamarketing/.env
+          docker compose config -q
+
+  deploy:
+    name: Deploy (SSH -> docker compose)
+    runs-on: ubuntu-latest
+    needs: [ci]
+    if: github.ref == 'refs/heads/master' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT || 22 }}
+          script_stop: true
+          script: |
+            export DEPLOY_PATH='${{ secrets.DEPLOY_PATH }}'
+            if [ -z "$DEPLOY_PATH" ]; then export DEPLOY_PATH="/var/www/Diary-project/SDAMarketing"; fi
+            export DEPLOY_BRANCH='${{ secrets.DEPLOY_BRANCH }}'
+            if [ -z "$DEPLOY_BRANCH" ]; then export DEPLOY_BRANCH="master"; fi
+            cd "$DEPLOY_PATH"
+            git fetch --prune origin
+            git reset --hard "origin/${DEPLOY_BRANCH}"
+            bash ".github/deploy_ssh.sh"

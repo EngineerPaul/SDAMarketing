@@ -9,3 +9,4 @@ media/
 db.sqlite3
 .env
 **/.env
+github_actions_ed25519*
