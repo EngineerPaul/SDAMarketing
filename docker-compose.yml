@@ -1,0 +1,20 @@
+services:
+  web:
+    build: .
+    container_name: sdamarketing
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./sdamarketing/.env
+    volumes:
+      - ./db.sqlite3:/app/db.sqlite3
+      - ./media:/app/media
+    restart: unless-stopped
+    networks:
+      - extra_net
+      - default
+
+networks:
+  extra_net:
+    external: true
+    name: extra_services
